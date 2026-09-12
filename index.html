@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craft Corner 9000 — Daycare Arts & Crafts</title>
+<style>
+  :root {
+    --c-yellow: #fde047;
+    --c-red: #ef4444;
+    --c-blue: #3b82f6;
+    --c-blue-dark: #1d4ed8;
+    --c-teal: #06b6d4;
+    --c-green: #22c55e;
+    --c-purple: #a855f7;
+    --border-black: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Fredoka', cursive, sans-serif; }
+  body {
+    background-color: #f1f5f9;
+    background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px), radial-gradient(#cbd5e1 1.5px, #f1f5f9 1.5px);
+    background-size: 24px 24px; background-position: 0 0, 12px 12px;
+    color: #0f172a; padding-bottom: 90px;
+  }
+  header {
+    background: var(--c-yellow); border-bottom: 5px solid var(--border-black);
+    padding: 20px 16px 24px; text-align: center; box-shadow: 0 6px 0 var(--border-black);
+  }
+  .banner-badge {
+    display: inline-block; background: var(--c-red); color: white; font-size: 0.85rem;
+    font-weight: 900; text-transform: uppercase; padding: 4px 14px; border: 3px solid var(--border-black);
+    border-radius: 20px; box-shadow: 3px 3px 0 var(--border-black); transform: rotate(-3deg); margin-bottom: 8px;
+  }
+  header h1 { font-size: 2.2rem; font-weight: 900; text-shadow: 2px 2px 0 white, 4px 4px 0 var(--c-teal); }
+  header p { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-top: 4px; }
+  .container { max-width: 820px; margin: 24px auto 0; padding: 0 14px; }
+  .stepper { display: flex; gap: 8px; margin-bottom: 22px; overflow-x: auto; padding-bottom: 4px; }
+  .step-tab {
+    flex: 1; min-width: 120px; text-align: center; padding: 12px 8px; border: 3px solid var(--border-black);
+    border-radius: 14px; font-weight: 900; font-size: 0.92rem; cursor: pointer; background: white;
+    color: var(--border-black); box-shadow: 4px 4px 0 var(--border-black); transition: all 0.1s ease;
+  }
+  .step-tab:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--border-black); }
+  .step-tab.active:nth-child(1) { background: var(--c-red); color: white; transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--border-black); }
+  .step-tab.active:nth-child(2) { background: var(--c-purple); color: white; transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--border-black); }
+  .step-tab.active:nth-child(3) { background: var(--c-teal); color: white; transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--border-black); }
+  .step-tab.active:nth-child(4) { background: var(--c-green); color: white; transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--border-black); }
+  .card { background: white; border: 4px solid var(--border-black); border-radius: 18px; padding: 22px; margin-bottom: 24px; box-shadow: 6px 6px 0 var(--border-black); }
+  .card-tape {
+    display: inline-block; background: rgba(253, 224, 71, 0.9); border: 2px dashed #ca8a04;
+    padding: 4px 16px; font-weight: 800; font-size: 0.85rem; transform: rotate(-1deg); margin-bottom: 12px;
+  }
+  .card-title { font-size: 1.45rem; font-weight: 900; margin-bottom: 6px; }
+  .card-desc { font-size: 0.92rem; font-weight: 600; color: #475569; margin-bottom: 18px; }
+  .btn {
+    border: 3px solid var(--border-black); border-radius: 12px; padding: 10px 18px; font-size: 0.92rem;
+    font-weight: 900; cursor: pointer; box-shadow: 3px 3px 0 var(--border-black); display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--border-black); }
+  .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--border-black); }
+  .btn-yellow { background: var(--c-yellow); color: var(--border-black); }
+  .btn-teal { background: var(--c-teal); color: white; }
+  .btn-green { background: var(--c-green); color: white; }
+  .btn-white { background: white; color: var(--border-black); }
+  .preset-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .btn-preset { background: #fdf2f8; border: 2px solid var(--border-black); border-radius: 20px; padding: 6px 14px; font-size: 0.85rem; font-weight: 800; cursor: pointer; box-shadow: 2px 2px 0 var(--border-black); }
+  .kid-row { display: flex; align-items: center; gap: 12px; background: #f8fafc; border: 3px solid var(--border-black); border-radius: 12px; padding: 10px 14px; margin-bottom: 10px; box-shadow: 3px 3px 0 var(--border-black); }
+  .kid-tag { background: var(--c-yellow); border: 2px solid var(--border-black); border-radius: 8px; padding: 4px 10px; font-weight: 900; font-size: 0.88rem; min-width: 90px; text-align: center; }
+  .age-control { display: flex; align-items: center; gap: 8px; }
+  .btn-stepper { width: 32px; height: 32px; border: 2px solid var(--border-black); border-radius: 8px; background: white; font-weight: 900; font-size: 1.1rem; cursor: pointer; }
+  .age-val { font-size: 1.15rem; font-weight: 900; min-width: 60px; text-align: center; }
+  .theme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .theme-box { background: white; border: 3px solid var(--border-black); border-radius: 14px; padding: 16px 12px; text-align: center; cursor: pointer; box-shadow: 4px 4px 0 var(--border-black); }
+  .theme-box.selected { background: var(--c-yellow); transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--border-black); }
+  .theme-icon { font-size: 2.2rem; margin-bottom: 4px; }
+  .theme-name { font-weight: 900; font-size: 0.95rem; }
+  .theme-sub { font-size: 0.75rem; font-weight: 700; color: #64748b; margin-top: 4px; }
+  .supply-header-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .badge-counter { background: var(--c-green); color: white; border: 2px solid var(--border-black); border-radius: 20px; padding: 4px 12px; font-size: 0.88rem; font-weight: 900; box-shadow: 2px 2px 0 var(--border-black); }
+  .category-title { font-size: 1rem; font-weight: 900; margin-bottom: 8px; }
+  .supply-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .supply-pill-card { display: flex; align-items: center; gap: 8px; background: white; border: 2px solid var(--border-black); border-radius: 10px; padding: 8px 12px; cursor: pointer; box-shadow: 2px 2px 0 var(--border-black); }
+  .supply-pill-card.checked { background: #dcfce7; border-color: #15803d; }
+  .supply-pill-card input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+  .add-material-box { background: #fef9c3; border: 3px dashed var(--border-black); border-radius: 14px; padding: 16px; margin-top: 20px; }
+  .text-input { flex: 1; border: 2px solid var(--border-black); border-radius: 8px; padding: 8px 12px; font-size: 0.9rem; font-weight: 700; outline: none; }
+  .craft-card { background: white; border: 3px solid var(--border-black); border-radius: 16px; padding: 18px; margin-bottom: 16px; box-shadow: 5px 5px 0 var(--border-black); }
+  .craft-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+  .craft-heading { font-size: 1.2rem; font-weight: 900; }
+  .match-pill { border: 2px solid var(--border-black); border-radius: 20px; padding: 4px 10px; font-size: 0.8rem; font-weight: 900; box-shadow: 2px 2px 0 var(--border-black); white-space: nowrap; }
+  .match-pill.ready { background: var(--c-green); color: white; }
+  .match-pill.almost { background: var(--c-yellow); color: var(--border-black); }
+  .craft-meta-tags { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.8rem; font-weight: 800; color: #475569; margin-bottom: 10px; }
+  .meta-tag { background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; padding: 2px 8px; }
+  .teamwork-card { background: #eff6ff; border: 2px solid var(--c-blue); border-radius: 10px; padding: 12px; margin: 12px 0; }
+  .teamwork-title { font-size: 0.88rem; font-weight: 900; color: var(--c-blue-dark); margin-bottom: 6px; }
+  .team-role { font-size: 0.85rem; font-weight: 700; color: #1e3a8a; margin-bottom: 4px; }
+  .token { display: inline-block; border: 1.5px solid var(--border-black); border-radius: 6px; padding: 2px 6px; font-size: 0.75rem; font-weight: 800; margin: 2px; }
+  .token.have { background: #dcfce7; color: #166534; }
+  .token.missing { background: #fee2e2; color: #991b1b; }
+  .substitute-box { background: #fef3c7; border: 2px dashed #b45309; border-radius: 8px; padding: 8px 10px; font-size: 0.8rem; font-weight: 800; color: #78350f; margin: 10px 0; }
+  .step-toggle-btn { background: var(--c-yellow); border: 2px solid var(--border-black); border-radius: 8px; padding: 6px 12px; font-size: 0.82rem; font-weight: 900; cursor: pointer; box-shadow: 2px 2px 0 var(--border-black); }
+  .instructions-ol { margin-top: 10px; padding-left: 20px; font-size: 0.88rem; font-weight: 700; color: #334155; }
+  .footer-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: white; border-top: 4px solid var(--border-black); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="banner-badge">🖍️ Daycare Rec-Room Edition</div>
+  <h1>🎨 Craft Corner 9000</h1>
+  <p>Find the coolest arts & crafts with the exact stuff in your toy box!</p>
+</header>
+
+<div class="container">
+  <nav class="stepper">
+    <button class="step-tab active" onclick="switchStep(1)">1. 👧 Helpers</button>
+    <button class="step-tab" onclick="switchStep(2)">2. 🌟 Themes</button>
+    <button class="step-tab" onclick="switchStep(3)">3. ✂️ Toy Box (<span id="tab-supply-count">0</span>)</button>
+    <button class="step-tab" onclick="switchStep(4)">4. 🚀 Projects (<span id="tab-craft-count">0</span>)</button>
+  </nav>
+
+  <!-- STEP 1 -->
+  <section id="step-1" class="card">
+    <div class="card-tape">📋 Daycare Attendance Sheet</div>
+    <h2 class="card-title">Who is Crafting Today?</h2>
+    <p class="card-desc">Set the kids' ages. The app automatically assigns big-kid and little-kid roles so everyone is happy!</p>
+    <div class="preset-row">
+      <button class="btn-preset" onclick="setPresetKids([8, 3])">⭐️ Quick Pick: 2 Kids (Ages 8 & 3)</button>
+      <button class="btn-preset" onclick="setPresetKids([5])">1 Kid (Age 5)</button>
+      <button class="btn-preset" onclick="setPresetKids([7, 4])">2 Kids (Ages 7 & 4)</button>
+    </div>
+    <div id="kids-container"></div>
+    <div style="display:flex; justify-content:space-between; margin-top:16px;">
+      <button class="btn btn-white" onclick="addKid()">➕ Add Another Helper</button>
+      <button class="btn btn-yellow" onclick="switchStep(2)">Pick Theme ➔</button>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section id="step-2" class="card" style="display:none;">
+    <div class="card-tape">🎨 Activity Center Theme</div>
+    <h2 class="card-title">Choose Your Play Theme!</h2>
+    <p class="card-desc">Pick what the kids are into right now, or select "Surprise Us" for the full catalog.</p>
+    <div class="theme-grid">
+      <div class="theme-box selected" onclick="selectTheme('all', this)"><div class="theme-icon">✨</div><div class="theme-name">Surprise Us / All</div><div class="theme-sub">Show everything possible</div></div>
+      <div class="theme-box" onclick="selectTheme('gabbys', this)"><div class="theme-icon">🐱</div><div class="theme-name">Gabby's Dollhouse</div><div class="theme-sub">Baby Box, MerCat, Cakey</div></div>
+      <div class="theme-box" onclick="selectTheme('cooking', this)"><div class="theme-icon">🍳</div><div class="theme-name">Pretend Cooking</div><div class="theme-sub">Pizza, cupcakes & treats</div></div>
+      <div class="theme-box" onclick="selectTheme('nature', this)"><div class="theme-icon">🌿</div><div class="theme-name">Nature & Yard</div><div class="theme-sub">Leaves, rocks, twig rafts</div></div>
+      <div class="theme-box" onclick="selectTheme('recycled', this)"><div class="theme-icon">📦</div><div class="theme-name">Box Inventions</div><div class="theme-sub">Mazes, rockets & bots</div></div>
+    </div>
+    <div style="display:flex; justify-content:space-between; margin-top:20px;">
+      <button class="btn btn-white" onclick="switchStep(1)">⬅️ Back</button>
+      <button class="btn btn-teal" onclick="switchStep(3)">Check Supplies ➔</button>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section id="step-3" class="card" style="display:none;">
+    <div class="card-tape">📦 Supply Closet Inventory</div>
+    <div class="supply-header-bar">
+      <div>
+        <h2 class="card-title">What Materials Do You Have?</h2>
+        <p class="card-desc" style="margin-bottom:0;">Check off what's in the house. Your closet is automatically remembered!</p>
+      </div>
+      <div class="badge-counter" id="badge-counter-text">0 Ready</div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;">
+      <button class="btn btn-yellow" onclick="quickCheckStandard()">⭐️ Quick Check Daycare Basics</button>
+      <button class="btn btn-white" onclick="clearAllSupplies()">Clear All</button>
+    </div>
+    <div id="supply-groups-container"></div>
+    <div class="add-material-box">
+      <div style="font-weight:900; font-size:0.95rem; margin-bottom:8px;">➕ Found something new in your bin? Add it here!</div>
+      <p style="font-size:0.82rem; font-weight:700; color:#854d0e; margin-bottom:8px;">
+        Type any craft material (e.g. "Popsicle Sticks", "Felt Sheets", "Glitter Glue"). It instantly adds to your closet and recalibrates the database!
+      </p>
+      <div style="display:flex; gap:8px;">
+        <input type="text" id="new-supply-input" class="text-input" placeholder="Type new supply name...">
+        <button class="btn btn-green" onclick="addNewCustomSupply()">Add & Recalibrate</button>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; margin-top:20px;">
+      <button class="btn btn-white" onclick="switchStep(2)">⬅️ Back</button>
+      <button class="btn btn-green" onclick="switchStep(4)">Find Crafts ➔</button>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section id="step-4" class="card" style="display:none;">
+    <div class="card-tape">🎉 Ready, Set, Craft!</div>
+    <h2 class="card-title">Matched Craft Projects</h2>
+    <p class="card-desc" id="results-headline">Searching the craft database...</p>
+    <div id="crafts-results-container"></div>
+    <div style="display:flex; justify-content:space-between; margin-top:20px; border-top:3px solid var(--border-black); padding-top:14px;">
+      <button class="btn btn-white" onclick="switchStep(3)">⬅️ Edit Supplies</button>
+    </div>
+  </section>
+</div>
+
+<div class="footer-bar">
+  <div style="font-size:0.88rem; font-weight:900;" id="footer-status-text">Helpers: 2 Kids (Ages 8 & 3)</div>
+  <button class="btn btn-yellow" onclick="switchStep(4)">View Crafts (<span id="footer-badge-count">0</span>)</button>
+</div>
+
+<script>
+let SUPPLY_CATEGORIES = [
+  { category: "📦 Recycled Treasures", items: [
+    { id: "cardboard", name: "Cardboard (Boxes / Sheets)", icon: "📦" },
+    { id: "tubes", name: "Cardboard Rolls (Paper Towel / TP)", icon: "🧻" },
+    { id: "egg_carton", name: "Egg Cartons", icon: "🥚" },
+    { id: "plastic_bottle", name: "Plastic Bottles / Containers", icon: "🧴" },
+    { id: "plastic_bag", name: "Plastic Zip Bags", icon: "🛍️" }
+  ]},
+  { category: "✂️ Fasteners & Tools", items: [
+    { id: "scissors", name: "Scissors", icon: "✂️" },
+    { id: "glue", name: "School Glue or Glue Stick", icon: "🧴" },
+    { id: "tape", name: "Tape (Masking, Clear, or Duct)", icon: "🩹" }
+  ]},
+  { category: "🧶 The Fluffy & Bendy Bin", items: [
+    { id: "puff_balls", name: "Puff Balls / Pom-Poms", icon: "🧶" },
+    { id: "pipe_cleaners", name: "Pipe Cleaners", icon: "➰" },
+    { id: "googly_eyes", name: "Googly Eyes", icon: "👀" },
+    { id: "construction_paper", name: "Colored Construction Paper", icon: "📄" },
+    { id: "yarn", name: "Yarn or String", icon: "🧵" }
+  ]},
+  { category: "🎨 Colors & Kitchen Bits", items: [
+    { id: "markers", name: "Washable Markers", icon: "🖍️" },
+    { id: "paint", name: "Washable Paint", icon: "🎨" },
+    { id: "foil", name: "Aluminum Foil", icon: "🪙" },
+    { id: "pasta_rice", name: "Dry Pasta or Rice", icon: "🌾" },
+    { id: "leaves", name: "Fallen Leaves", icon: "🍁" },
+    { id: "twigs", name: "Twigs & Sticks", icon: "🪵" },
+    { id: "rocks", name: "Smooth Rocks", icon: "🪨" }
+  ] }
+];
+
+let CRAFT_PROJECTS = [
+  {
+    id: "gabbys-cat-ears",
+    title: "Gabby's Magical Cat Ear Headband",
+    theme: "gabbys", min_age: 3, max_age: 10, prep_time: "10 mins", mess_level: "Low",
+    required_supplies: ["cardboard", "scissors", "glue", "pipe_cleaners", "puff_balls"],
+    substitutes: { pipe_cleaners: "Fold a sturdy cardboard strip as the headband", puff_balls: "Crumple colorful tissue paper or draw ear tufts" },
+    description: "Wearable cat ears inspired by Gabby's signature magical headband. Pinch the ears to start craft time!",
+    role_younger: "Pick puff ball colors, stick pom-poms onto glued ear triangles, and color with markers.",
+    role_older: "Measure headband size, cut symmetrical cardboard ear triangles, and attach them securely.",
+    steps: ["Cut a 1-inch cardboard strip sized to fit.", "Cut two cardboard triangles for ears.", "Glue puff balls or twist pipe cleaners around the rim.", "Attach ears to headband.", "Wear and pinch for magic!"]
+  },
+  {
+    id: "baby-box-robot",
+    title: "Baby Box's Cardboard Robo-Buddy",
+    theme: "gabbys", min_age: 3, max_age: 12, prep_time: "15 mins", mess_level: "Medium",
+    required_supplies: ["cardboard", "tubes", "glue", "scissors"],
+    substitutes: { cardboard: "Use a cereal box or tissue box" },
+    description: "Turn cardboard boxes and tubes into an inventive, springy robot companion straight from Baby Box's Craft Room.",
+    role_younger: "Press puff-ball control buttons onto the belly, stick on eyes, and draw robot dials.",
+    role_older: "Cut tubes evenly for legs, poke arm holes, and wrap foil corners cleanly.",
+    steps: ["Color or wrap box in foil for torso.", "Cut tube in half for two legs; glue underneath.", "Poke side holes and insert pipe cleaner or cardboard arms.", "Glue on buttons and dials."]
+  },
+  {
+    id: "mercat-potion",
+    title: "MerCat's Sparkling Spa Potion",
+    theme: "gabbys", min_age: 3, max_age: 10, prep_time: "10 mins", mess_level: "Medium",
+    required_supplies: ["plastic_bottle", "paint", "foil"],
+    substitutes: { foil: "Tiny torn shiny paper scraps or pom-poms" },
+    description: "Mix an oceanic calming sensory bottle that swirls and sparkles like MerCat's spa.",
+    role_younger: "Drop foil sparkles and pom-poms into the bottle, do the swirl testing.",
+    role_older: "Measure and pour water, count color drops, and tape the cap seal tightly.",
+    steps: ["Fill plastic bottle 3/4 with water.", "Add a drop of paint or food coloring.", "Drop in foil sparkles or pom-poms.", "Tape cap shut and shake to watch the calming swirl."]
+  },
+  {
+    id: "cardboard-pizza",
+    title: "Wood-Fired Cardboard Pizza Parlor",
+    theme: "cooking", min_age: 3, max_age: 11, prep_time: "20 mins", mess_level: "Low",
+    required_supplies: ["cardboard", "scissors", "construction_paper", "glue"],
+    substitutes: { construction_paper: "Color white paper with markers or crayons" },
+    description: "Craft a personal pizza with thick cardboard crust, sliceable triangles, and colorful paper toppings.",
+    role_younger: "Sort toppings by color, glue toppings onto their own slice, take customer orders.",
+    role_older: "Trace and cut the circular crust, divide into equal slices, and construct an oven box.",
+    steps: ["Trace a plate onto cardboard and cut out a circle.", "Slice pizza into 4 or 6 triangles.", "Cut paper toppings: pepperoni, peppers, mushrooms.", "Glue toppings on and serve."]
+  },
+  {
+    id: "cakey-cupcakes",
+    title: "Cakey Cat's Sweet Pretend Cupcakes",
+    theme: "cooking", min_age: 3, max_age: 9, prep_time: "10 mins", mess_level: "Low",
+    required_supplies: ["egg_carton", "puff_balls", "glue", "scissors"],
+    substitutes: { egg_carton: "Paper baking cups or toilet paper tube rings" },
+    description: "Recycle egg carton cups into bakery treats piled high with puff ball frosting.",
+    role_younger: "Stuff pom-pom frosting into cups, choose bakery flavors, serve on paper plates.",
+    role_older: "Trim individual egg carton cups with scissors, bend pipe cleaner cherries.",
+    steps: ["Cut egg carton cups apart into liners.", "Color liners with markers.", "Glue puff balls inside as frosting.", "Top with a pipe cleaner cherry."]
+  },
+  {
+    id: "leaf-lanterns",
+    title: "Nature Explorer Leaf Lantern",
+    theme: "nature", min_age: 3, max_age: 12, prep_time: "15 mins", mess_level: "Medium",
+    required_supplies: ["leaves", "glue", "plastic_bottle"],
+    substitutes: { plastic_bottle: "Clear plastic cup or takeout container" },
+    description: "Collect autumn yard leaves and decoupage them onto a glowing lantern jar.",
+    role_younger: "Hunt for colorful fallen leaves in the yard, paint broad glue strokes.",
+    role_older: "Cut bottle top opening smoothly, arrange overlapping botanical mosaic patterns.",
+    steps: ["Collect flat, flexible leaves outside.", "Cut top off plastic bottle.", "Brush glue around bottle exterior.", "Press leaves onto glue, seal with second glue coat."]
+  },
+  {
+    id: "twig-raft",
+    title: "Buoyant Twig Raft & Sail",
+    theme: "nature", min_age: 3, max_age: 12, prep_time: "15 mins", mess_level: "Low",
+    required_supplies: ["twigs", "yarn", "scissors", "leaves"],
+    substitutes: { yarn: "Rubber bands, tape, or dental floss" },
+    description: "An outdoor STEM craft: lash twigs together to create a buoyant raft with a wind-catching leaf sail.",
+    role_younger: "Find sticks and broad leaves outside, blow on sail to navigate.",
+    role_older: "Trim twigs to matching lengths, knot and cross-lash twigs with yarn.",
+    steps: ["Collect 8-10 straight twigs.", "Line up twigs and lash ends securely with yarn.", "Wedge upright twig in center as mast.", "Pierce large leaf onto mast as sail.", "Float in sink or water tub!"]
+  },
+  {
+    id: "cardboard-maze",
+    title: "Gravity-Drop Cardboard Marble Maze",
+    theme: "recycled", min_age: 4, max_age: 12, prep_time: "20 mins", mess_level: "Low",
+    required_supplies: ["cardboard", "tubes", "scissors", "glue"],
+    substitutes: { tubes: "Strips of folded cardboard as track walls" },
+    description: "Design an interactive handheld marble maze using box lids and tube tunnels.",
+    role_younger: "Roll pom-poms through ramps to test slopes, draw obstacle traps.",
+    role_older: "Engineer ramp angles so balls roll freely, cut tunnel arches, align track gates.",
+    steps: ["Use box lid as maze board.", "Cut tubes in half lengthwise for ramps.", "Glue ramps at alternating slopes.", "Tilt board to steer ball to the finish line."]
+  }
+];
+
+let appState = {
+  kids: [8, 3],
+  selectedTheme: 'all',
+  supplies: new Set(['cardboard', 'tubes', 'scissors', 'glue', 'tape', 'puff_balls', 'pipe_cleaners', 'markers'])
+};
+
+function loadSaved() {
+  try {
+    const s = localStorage.getItem('cc9k_supplies');
+    if (s) appState.supplies = new Set(JSON.parse(s));
+    const k = localStorage.getItem('cc9k_kids');
+    if (k) appState.kids = JSON.parse(k);
+    const c = localStorage.getItem('cc9k_custom_supplies');
+    if (c) {
+      const customItems = JSON.parse(c);
+      customItems.forEach(item => {
+        if (!SUPPLY_CATEGORIES[2].items.some(x => x.id === item.id)) {
+          SUPPLY_CATEGORIES[2].items.push(item);
+        }
+      });
+    }
+  } catch(e) {}
+}
+
+function saveState() {
+  try {
+    localStorage.setItem('cc9k_supplies', JSON.stringify(Array.from(appState.supplies)));
+    localStorage.setItem('cc9k_kids', JSON.stringify(appState.kids));
+  } catch(e) {}
+}
+
+function switchStep(num) {
+  document.querySelectorAll('.step-tab').forEach((t, i) => t.classList.toggle('active', i+1 === num));
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById('step-' + i).style.display = (i === num) ? 'block' : 'none';
+  }
+  if (num === 4) renderCraftResults();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderKids() {
+  const c = document.getElementById('kids-container');
+  c.innerHTML = '';
+  appState.kids.forEach((age, idx) => {
+    const r = document.createElement('div');
+    r.className = 'kid-row';
+    r.innerHTML = `
+      <div class="kid-tag">Helper #${idx+1}</div>
+      <div class="age-control">
+        <button class="btn-stepper" onclick="changeAge(${idx}, -1)">-</button>
+        <div class="age-val">${age} yrs</div>
+        <button class="btn-stepper" onclick="changeAge(${idx}, 1)">+</button>
+      </div>
+      <span style="font-size:0.85rem; font-weight:800; color:#64748b;">(${age <= 3 ? 'Preschooler / Little Sibling' : 'Big Kid / Assistant'})</span>
+      ${appState.kids.length > 1 ? `<button style="margin-left:auto; background:none; border:none; font-size:1.2rem; cursor:pointer;" onclick="removeKid(${idx})">🗑️</button>` : ''}
+    `;
+    c.appendChild(r);
+  });
+  saveState();
+  updateStatus();
+}
+
+function changeAge(idx, delta) {
+  appState.kids[idx] = Math.max(1, Math.min(16, appState.kids[idx] + delta));
+  renderKids();
+}
+
+function addKid() { appState.kids.push(5); renderKids(); }
+function removeKid(idx) { if (appState.kids.length > 1) { appState.kids.splice(idx, 1); renderKids(); } }
+function setPresetKids(arr) { appState.kids = [...arr]; renderKids(); }
+
+function selectTheme(theme, el) {
+  appState.selectedTheme = theme;
+  document.querySelectorAll('.theme-box').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function renderSupplies() {
+  const c = document.getElementById('supply-groups-container');
+  c.innerHTML = '';
+  SUPPLY_CATEGORIES.forEach(grp => {
+    const gDiv = document.createElement('div');
+    gDiv.className = 'supply-category-block';
+    gDiv.innerHTML = `<div class="category-title">${grp.category}</div>`;
+    const grid = document.createElement('div');
+    grid.className = 'supply-grid';
+    grp.items.forEach(i => {
+      const checked = appState.supplies.has(i.id);
+      const it = document.createElement('div');
+      it.className = `supply-pill-card ${checked ? 'checked' : ''}`;
+      it.innerHTML = `
+        <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleSupply('${i.id}', this.checked)">
+        <span style="font-size:1.2rem;">${i.icon}</span>
+        <span class="supply-name">${i.name}</span>
+      `;
+      grid.appendChild(it);
+    });
+    gDiv.appendChild(grid);
+    c.appendChild(gDiv);
+  });
+  updateSupplyCount();
+}
+
+function toggleSupply(id, checked) {
+  if (checked) appState.supplies.add(id); else appState.supplies.delete(id);
+  renderSupplies();
+  saveState();
+}
+
+function quickCheckStandard() {
+  ['cardboard', 'tubes', 'scissors', 'glue', 'tape', 'puff_balls', 'pipe_cleaners', 'markers'].forEach(i => appState.supplies.add(i));
+  renderSupplies();
+  saveState();
+}
+
+function clearAllSupplies() {
+  appState.supplies.clear();
+  renderSupplies();
+  saveState();
+}
+
+function updateSupplyCount() {
+  const count = appState.supplies.size;
+  document.getElementById('tab-supply-count').textContent = count;
+  document.getElementById('badge-counter-text').textContent = `${count} Ready`;
+}
+
+function addNewCustomSupply() {
+  const inp = document.getElementById('new-supply-input');
+  const val = inp.value.trim();
+  if (!val) return;
+  const id = val.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  const newItem = { id: id, name: val, icon: '✨' };
+
+  SUPPLY_CATEGORIES[2].items.push(newItem);
+  appState.supplies.add(id);
+
+  try {
+    const existingCustom = JSON.parse(localStorage.getItem('cc9k_custom_supplies') || '[]');
+    existingCustom.push(newItem);
+    localStorage.setItem('cc9k_custom_supplies', JSON.stringify(existingCustom));
+  } catch(e) {}
+
+  inp.value = '';
+  renderSupplies();
+  saveState();
+  renderCraftResults();
+  alert(`"${val}" was added and the craft matcher has recalibrated!`);
+}
+
+function renderCraftResults() {
+  const c = document.getElementById('crafts-results-container');
+  c.innerHTML = '';
+  const list = CRAFT_PROJECTS.filter(p => appState.selectedTheme === 'all' || p.theme === appState.selectedTheme);
+  
+  let readyCount = 0;
+  list.forEach(p => {
+    const missing = p.required_supplies.filter(s => !appState.supplies.has(s));
+    const isReady = missing.length === 0;
+    if (isReady) readyCount++;
+
+    const tokens = p.required_supplies.map(s => {
+      const have = appState.supplies.has(s);
+      return `<span class="token ${have ? 'have' : 'missing'}">${have ? '✓' : '✗'} ${formatName(s)}</span>`;
+    }).join(' ');
+
+    let subHtml = '';
+    if (missing.length > 0 && p.substitutes) {
+      const subNotes = missing.map(m => p.substitutes[m] ? `Missing ${formatName(m)}? Try: ${p.substitutes[m]}` : null).filter(Boolean);
+      if (subNotes.length) subHtml = `<div class="substitute-box">💡 Daycare Substitute Trick:<br>${subNotes.join('<br>')}</div>`;
+    }
+
+    const minKid = Math.min(...appState.kids);
+    const maxKid = Math.max(...appState.kids);
+    const rolesHtml = appState.kids.length >= 2 
+      ? `<div class="teamwork-card">
+           <div class="teamwork-title">🤝 Sibling Teamwork Breakdown (${maxKid} yrs & ${minKid} yrs)</div>
+           <div class="team-role"><strong>👶 For the ${minKid}-year-old:</strong> ${p.role_younger}</div>
+           <div class="team-role"><strong>👧 For the ${maxKid}-year-old:</strong> ${p.role_older}</div>
+         </div>`
+      : `<div class="teamwork-card">
+           <div class="teamwork-title">🎯 Child's Action Focus (${appState.kids[0]} yrs)</div>
+           <div class="team-role">${p.role_older}</div>
+         </div>`;
+
+    const card = document.createElement('div');
+    card.className = 'craft-card';
+    card.innerHTML = `
+      <div class="craft-top">
+        <h3 class="craft-heading">${p.title}</h3>
+        <span class="match-pill ${isReady ? 'ready' : 'almost'}">${isReady ? '🎉 100% Ready Now' : `Missing ${missing.length} Item${missing.length > 1 ? 's' : ''}`}</span>
+      </div>
+      <div class="craft-meta-tags">
+        <span class="meta-tag">⏱️ ${p.prep_time}</span>
+        <span class="meta-tag">🎨 Mess Level: ${p.mess_level}</span>
+        <span class="meta-tag">👧 Ages ${p.min_age}–${p.max_age}</span>
+      </div>
+      <p style="font-size:0.9rem; font-weight:700; color:#334155; margin-bottom:10px;">${p.description}</p>
+      ${rolesHtml}
+      <div style="margin: 10px 0;">${tokens}</div>
+      ${subHtml}
+      <div style="margin-top:10px;">
+        <button class="step-toggle-btn" onclick="toggleSteps('step-${p.id}', this)">📋 Show Steps ▼</button>
+        <ol id="step-${p.id}" class="instructions-ol" style="display:none;">
+          ${p.steps.map(s => `<li>${s}</li>`).join('')}
+        </ol>
+      </div>
+    `;
+    c.appendChild(card);
+  });
+
+  document.getElementById('tab-craft-count').textContent = readyCount;
+  document.getElementById('footer-badge-count').textContent = readyCount;
+  document.getElementById('results-headline').textContent = `Found ${list.length} activities (${readyCount} ready to make right now!).`;
+}
+
+function formatName(id) {
+  for (const cat of SUPPLY_CATEGORIES) {
+    const found = cat.items.find(i => i.id === id);
+    if (found) return found.name.split(' (')[0];
+  }
+  return id.replace(/_/g, ' ');
+}
+
+function toggleSteps(id, btn) {
+  const el = document.getElementById(id);
+  const hidden = el.style.display === 'none';
+  el.style.display = hidden ? 'block' : 'none';
+  btn.textContent = hidden ? '📋 Hide Steps ▲' : '📋 Show Steps ▼';
+}
+
+function updateStatus() {
+  document.getElementById('footer-status-text').textContent = `Helpers: ${appState.kids.length} Kids (${appState.kids.join(' & ')} yrs)`;
+}
+
+window.onload = function() {
+  loadSaved();
+  renderKids();
+  renderSupplies();
+};
+</script>
+</body>
+</html>
