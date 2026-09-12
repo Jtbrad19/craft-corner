@@ -3,79 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Craft Corner 9000 — Playroom Edition</title>
+<title>Craft Corner 9000 — Rugrats Playroom Edition</title>
 <style>
   :root {
     --c-reptar: #22c55e;
     --c-chuckie-cyan: #06b6d4;
     --c-chuckie-purple: #8b5cf6;
     --c-tommy-blue: #38bdf8;
-    --c-angelica-orange: #f59e0b;
-    --c-angelica-yellow: #fbbf24;
-    --c-border: #111827;
+    --c-angelica-orange: #f97316;
+    --c-angelica-yellow: #fde047;
+    --c-spike-red: #ef4444;
+    --c-border: #0f172a;
+    --c-bg: #f8fafc;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Fredoka', cursive, sans-serif; }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Fredoka', 'Marker Felt', cursive, sans-serif; }
   body {
-    background-color: #f8fafc;
-    background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
-    background-size: 22px 22px;
+    background-color: #f1f5f9;
+    background-image: radial-gradient(#94a3b8 2px, transparent 2px);
+    background-size: 20px 20px;
     color: var(--c-border);
     padding-bottom: 90px;
   }
   header {
     background: var(--c-angelica-yellow);
-    border-bottom: 5px solid var(--c-border);
-    padding: 20px 16px;
+    border-bottom: 6px solid var(--c-border);
+    padding: 22px 14px;
     text-align: center;
     box-shadow: 0 6px 0 var(--c-border);
+    position: relative;
   }
-  .rugrats-badge {
+  .rugrats-logo-box {
     display: inline-block;
-    background: var(--c-reptar);
+    background: var(--c-spike-red);
     color: white;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 900;
     text-transform: uppercase;
-    padding: 4px 14px;
-    border: 3px solid var(--c-border);
+    letter-spacing: 0.08em;
+    padding: 6px 18px;
+    border: 3.5px solid var(--c-border);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    box-shadow: 3px 3px 0 var(--c-border);
+    box-shadow: 4px 4px 0 var(--c-border);
     transform: rotate(-3deg);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   header h1 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     font-weight: 900;
-    text-shadow: 2px 2px 0 white, 4px 4px 0 var(--c-chuckie-cyan);
+    color: var(--c-border);
+    text-shadow: 3px 3px 0 white, 6px 6px 0 var(--c-chuckie-cyan);
     letter-spacing: -0.02em;
   }
-  header p { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-top: 4px; }
-  .container { max-width: 820px; margin: 20px auto 0; padding: 0 14px; }
-  .stepper { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 4px; }
+  header p { font-size: 0.98rem; font-weight: 800; color: #1e293b; margin-top: 4px; }
+  .container { max-width: 840px; margin: 22px auto 0; padding: 0 14px; }
+  .stepper { display: flex; gap: 8px; margin-bottom: 22px; overflow-x: auto; padding-bottom: 4px; }
   .step-tab {
     flex: 1; min-width: 110px; text-align: center; padding: 12px 6px;
-    border: 3px solid var(--c-border);
+    border: 3.5px solid var(--c-border);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    font-weight: 900; font-size: 0.9rem; cursor: pointer; background: white;
+    font-weight: 900; font-size: 0.92rem; cursor: pointer; background: white;
     color: var(--c-border); box-shadow: 4px 4px 0 var(--c-border); transition: all 0.1s ease;
   }
-  .step-tab.active:nth-child(1) { background: #ef4444; color: white; }
-  .step-tab.active:nth-child(2) { background: var(--c-chuckie-purple); color: white; }
-  .step-tab.active:nth-child(3) { background: var(--c-chuckie-cyan); color: white; }
-  .step-tab.active:nth-child(4) { background: var(--c-reptar); color: white; }
+  .step-tab:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--c-border); }
+  .step-tab.active:nth-child(1) { background: var(--c-spike-red); color: white; transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--c-border); }
+  .step-tab.active:nth-child(2) { background: var(--c-chuckie-purple); color: white; transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--c-border); }
+  .step-tab.active:nth-child(3) { background: var(--c-chuckie-cyan); color: white; transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--c-border); }
+  .step-tab.active:nth-child(4) { background: var(--c-reptar); color: white; transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--c-border); }
   .card {
     background: white; border: 4px solid var(--c-border);
-    border-radius: 20px; padding: 22px; margin-bottom: 22px;
+    border-radius: 20px; padding: 22px; margin-bottom: 24px;
     box-shadow: 6px 6px 0 var(--c-border);
   }
-  .card-title { font-size: 1.4rem; font-weight: 900; margin-bottom: 6px; }
-  .card-desc { font-size: 0.9rem; font-weight: 600; color: #475569; margin-bottom: 16px; }
-  .btn {
-    border: 3px solid var(--c-border); border-radius: 12px; padding: 10px 18px;
-    font-size: 0.92rem; font-weight: 900; cursor: pointer; box-shadow: 3px 3px 0 var(--c-border);
-    display: inline-flex; align-items: center; gap: 6px; transition: all 0.1s;
+  .card-tape {
+    display: inline-block; background: var(--c-angelica-yellow); border: 2px dashed #ca8a04;
+    padding: 4px 14px; font-weight: 900; font-size: 0.85rem; transform: rotate(-1.5deg); margin-bottom: 12px;
   }
-  .btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--c-border); }
+  .card-title { font-size: 1.45rem; font-weight: 900; margin-bottom: 6px; color: var(--c-border); }
+  .card-desc { font-size: 0.92rem; font-weight: 700; color: #475569; margin-bottom: 18px; }
+  .btn {
+    border: 3.5px solid var(--c-border); border-radius: 14px; padding: 10px 18px;
+    font-size: 0.95rem; font-weight: 900; cursor: pointer; box-shadow: 4px 4px 0 var(--c-border);
+    display: inline-flex; align-items: center; gap: 6px; transition: all 0.1s ease;
+  }
+  .btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--c-border); }
   .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--c-border); }
   .btn-yellow { background: var(--c-angelica-yellow); color: var(--c-border); }
   .btn-cyan { background: var(--c-chuckie-cyan); color: white; }
@@ -83,123 +93,160 @@
   .btn-white { background: white; color: var(--c-border); }
   .kid-row {
     display: flex; align-items: center; gap: 12px; background: #f8fafc;
-    border: 3px solid var(--c-border); border-radius: 12px; padding: 10px 14px;
+    border: 3px solid var(--c-border); border-radius: 14px; padding: 10px 14px;
     margin-bottom: 10px; box-shadow: 3px 3px 0 var(--c-border);
   }
   .kid-tag {
     background: var(--c-angelica-yellow); border: 2px solid var(--c-border);
     border-radius: 8px; padding: 4px 10px; font-weight: 900; font-size: 0.88rem; min-width: 90px; text-align: center;
   }
+  .age-control { display: flex; align-items: center; gap: 8px; }
   .btn-stepper { width: 32px; height: 32px; border: 2px solid var(--c-border); border-radius: 8px; background: white; font-weight: 900; font-size: 1.1rem; cursor: pointer; }
-  .age-val { font-size: 1.1rem; font-weight: 900; min-width: 55px; text-align: center; }
+  .age-val { font-size: 1.15rem; font-weight: 900; min-width: 55px; text-align: center; }
   .theme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
   .theme-box {
-    background: white; border: 3px solid var(--c-border); border-radius: 14px;
-    padding: 14px 10px; text-align: center; cursor: pointer; box-shadow: 4px 4px 0 var(--c-border);
+    background: white; border: 3.5px solid var(--c-border); border-radius: 14px;
+    padding: 14px 10px; text-align: center; cursor: pointer; box-shadow: 4px 4px 0 var(--c-border); transition: all 0.1s;
   }
+  .theme-box:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--c-border); }
   .theme-box.selected { background: var(--c-angelica-yellow); transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--c-border); }
-  .theme-name { font-weight: 900; font-size: 0.95rem; margin-top: 4px; }
-  .supply-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+  .theme-title { font-weight: 900; font-size: 0.98rem; }
+  .theme-count { font-size: 0.78rem; font-weight: 800; color: #64748b; margin-top: 4px; }
+  .supply-group { margin-bottom: 20px; }
+  .supply-group-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 8px; color: #1e293b; }
+  .supply-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
   .supply-pill-card {
     display: flex; align-items: center; gap: 8px; background: white;
-    border: 2px solid var(--c-border); border-radius: 10px; padding: 8px 12px;
+    border: 2.5px solid var(--c-border); border-radius: 12px; padding: 8px 12px;
     cursor: pointer; box-shadow: 2px 2px 0 var(--c-border); user-select: none;
   }
   .supply-pill-card.checked { background: #dcfce7; border-color: #16a34a; }
   .supply-pill-card input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
-  .add-material-box { background: #fef9c3; border: 3px dashed var(--c-border); border-radius: 14px; padding: 14px; margin-top: 18px; }
-  .text-input { flex: 1; border: 2px solid var(--c-border); border-radius: 8px; padding: 8px 12px; font-size: 0.9rem; font-weight: 700; outline: none; }
-  .craft-card {
-    background: white; border: 3px solid var(--c-border); border-radius: 16px;
-    padding: 18px; margin-bottom: 16px; box-shadow: 5px 5px 0 var(--c-border);
-  }
+  .supply-name { font-weight: 800; font-size: 0.88rem; }
+  .add-material-box { background: #fef9c3; border: 3.5px dashed var(--c-border); border-radius: 14px; padding: 16px; margin-top: 18px; }
+  .text-input { flex: 1; border: 2.5px solid var(--c-border); border-radius: 10px; padding: 8px 12px; font-size: 0.9rem; font-weight: 800; outline: none; }
+  .craft-card { background: white; border: 3.5px solid var(--c-border); border-radius: 18px; padding: 20px; margin-bottom: 18px; box-shadow: 6px 6px 0 var(--c-border); }
   .craft-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
-  .craft-heading-box { display: flex; align-items: center; gap: 10px; }
-  .preview-badge {
-    width: 44px; height: 44px; border: 2px solid var(--c-border); border-radius: 10px;
-    display: flex; align-items: center; justify-content: center; background: #e0f2fe; box-shadow: 2px 2px 0 var(--c-border);
-  }
-  .craft-heading { font-size: 1.2rem; font-weight: 900; }
-  .match-pill { border: 2px solid var(--c-border); border-radius: 20px; padding: 4px 10px; font-size: 0.8rem; font-weight: 900; box-shadow: 2px 2px 0 var(--c-border); white-space: nowrap; }
+  .craft-heading { font-size: 1.25rem; font-weight: 900; color: var(--c-border); }
+  .match-pill { border: 2.5px solid var(--c-border); border-radius: 20px; padding: 4px 12px; font-size: 0.82rem; font-weight: 900; box-shadow: 2px 2px 0 var(--c-border); white-space: nowrap; }
   .match-pill.ready { background: var(--c-reptar); color: white; }
   .match-pill.almost { background: var(--c-angelica-yellow); color: var(--c-border); }
-  .teamwork-card { background: #eff6ff; border: 2px solid var(--c-chuckie-cyan); border-radius: 10px; padding: 12px; margin: 12px 0; }
-  .token { display: inline-block; border: 1.5px solid var(--c-border); border-radius: 6px; padding: 2px 6px; font-size: 0.75rem; font-weight: 800; margin: 2px; }
+  .craft-meta-tags { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.82rem; font-weight: 800; color: #475569; margin-bottom: 12px; }
+  .meta-tag { background: #f1f5f9; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 2px 8px; }
+  .teamwork-card { background: #eff6ff; border: 3px solid var(--c-chuckie-cyan); border-radius: 12px; padding: 12px 14px; margin: 12px 0; }
+  .teamwork-title { font-size: 0.88rem; font-weight: 900; color: #0369a1; margin-bottom: 6px; }
+  .team-role { font-size: 0.85rem; font-weight: 800; color: #1e3a8a; margin-bottom: 4px; }
+  .tokens-box { margin: 10px 0; }
+  .token { display: inline-block; border: 2px solid var(--c-border); border-radius: 6px; padding: 2px 8px; font-size: 0.78rem; font-weight: 800; margin: 2px; }
   .token.have { background: #dcfce7; color: #166534; }
   .token.missing { background: #fee2e2; color: #991b1b; }
-  .substitute-box { background: #fef3c7; border: 2px dashed #b45309; border-radius: 8px; padding: 8px 10px; font-size: 0.8rem; font-weight: 800; color: #78350f; margin: 10px 0; }
-  .instructions-ol { margin-top: 10px; padding-left: 20px; font-size: 0.88rem; font-weight: 700; color: #334155; }
-  .footer-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: white; border-top: 4px solid var(--c-border); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+  .substitute-box { background: #fef3c7; border: 2px dashed #b45309; border-radius: 10px; padding: 8px 12px; font-size: 0.82rem; font-weight: 800; color: #78350f; margin: 10px 0; }
+  .instructions-ol { margin-top: 10px; padding-left: 20px; font-size: 0.9rem; font-weight: 800; color: #334155; }
+  .instructions-ol li { margin-bottom: 6px; line-height: 1.4; }
+  .footer-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: white; border-top: 5px solid var(--c-border); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+  .footer-status { font-size: 0.9rem; font-weight: 900; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="rugrats-badge">🦖 Playroom Edition</div>
+  <div class="rugrats-logo-box">Reptar Playground Edition</div>
   <h1>Craft Corner 9000</h1>
-  <p>Find awesome craft projects using the supplies in your toy box!</p>
+  <p>Find awesome arts & crafts matched to the exact stuff in your house!</p>
 </header>
 
 <div class="container">
   <nav class="stepper">
     <button class="step-tab active" onclick="switchStep(1)">1. Helpers</button>
-    <button class="step-tab" onclick="switchStep(2)">2. Themes</button>
-    <button class="step-tab" onclick="switchStep(3)">3. Toy Box (<span id="tab-supply-count">0</span>)</button>
+    <button class="step-tab" onclick="switchStep(2)">2. Shows & Themes</button>
+    <button class="step-tab" onclick="switchStep(3)">3. Supplies (<span id="tab-supply-count">0</span>)</button>
     <button class="step-tab" onclick="switchStep(4)">4. Crafts (<span id="tab-craft-count">0</span>)</button>
   </nav>
 
   <!-- STEP 1: KIDS -->
   <section id="step-1" class="card">
+    <div class="card-tape">Playroom Attendance Sheet</div>
     <h2 class="card-title">Who is Crafting Today?</h2>
     <p class="card-desc">Set kid ages. Roles are split so older and younger kids craft together happily!</p>
     <div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
-      <button class="btn btn-yellow" onclick="setPresetKids([8, 3])">⭐️ Quick Pick: 2 Kids (Ages 8 & 3)</button>
+      <button class="btn btn-yellow" onclick="setPresetKids([8, 3])">Quick Pick: 2 Kids (Ages 8 & 3)</button>
       <button class="btn btn-white" onclick="setPresetKids([5])">1 Kid (Age 5)</button>
       <button class="btn btn-white" onclick="setPresetKids([7, 4])">2 Kids (Ages 7 & 4)</button>
     </div>
     <div id="kids-container"></div>
     <div style="display:flex; justify-content:space-between; margin-top:16px;">
-      <button class="btn btn-white" onclick="addKid()">➕ Add Helper</button>
-      <button class="btn btn-yellow" onclick="switchStep(2)">Pick Theme ➔</button>
+      <button class="btn btn-white" onclick="addKid()">+ Add Helper</button>
+      <button class="btn btn-yellow" onclick="switchStep(2)">Pick Theme &gt;</button>
     </div>
   </section>
 
   <!-- STEP 2: THEMES -->
   <section id="step-2" class="card" style="display:none;">
+    <div class="card-tape">Channel & Holiday Guide</div>
     <h2 class="card-title">Choose a Show or Theme!</h2>
-    <p class="card-desc">Select a show or seasonal holiday, or pick "Surprise Us" for everything.</p>
+    <p class="card-desc">Pick your favorite TV show, holiday, or general craft category.</p>
     <div class="theme-grid">
-      <div class="theme-box selected" onclick="selectTheme('all', this)"><div class="theme-name">✨ Surprise Us</div></div>
-      <div class="theme-box" onclick="selectTheme('rugrats', this)"><div class="theme-name">🦖 Rugrats</div></div>
-      <div class="theme-box" onclick="selectTheme('blues_clues', this)"><div class="theme-name">🐾 Blue's Clues</div></div>
-      <div class="theme-box" onclick="selectTheme('bluey', this)"><div class="theme-name">🐶 Bluey</div></div>
-      <div class="theme-box" onclick="selectTheme('gabbys', this)"><div class="theme-name">🐱 Gabby's House</div></div>
-      <div class="theme-box" onclick="selectTheme('holidays', this)"><div class="theme-name">🎃 Holidays</div></div>
-      <div class="theme-box" onclick="selectTheme('cooking', this)"><div class="theme-name">🍳 Kitchen Play</div></div>
+      <div class="theme-box selected" onclick="selectTheme('all', this)">
+        <div class="theme-title">Surprise Us / All</div>
+        <div class="theme-count">All 27 Crafts</div>
+      </div>
+      <div class="theme-box" onclick="selectTheme('rugrats', this)">
+        <div class="theme-title">Rugrats</div>
+        <div class="theme-count">Reptar, Tommy, Chuckie</div>
+      </div>
+      <div class="theme-box" onclick="selectTheme('blues_clues', this)">
+        <div class="theme-title">Blue's Clues</div>
+        <div class="theme-count">Notebooks & Mailboxes</div>
+      </div>
+      <div class="theme-box" onclick="selectTheme('bluey', this)">
+        <div class="theme-title">Bluey</div>
+        <div class="theme-count">Featherwand & Chattermax</div>
+      </div>
+      <div class="theme-box" onclick="selectTheme('gabbys', this)">
+        <div class="theme-title">Gabby's House</div>
+        <div class="theme-count">Cat Ears & MerCat</div>
+      </div>
+      <div class="theme-box" onclick="selectTheme('holidays', this)">
+        <div class="theme-title">Holidays</div>
+        <div class="theme-count">Halloween, Thanksgiving, Winter</div>
+      </div>
+      <div class="theme-box" onclick="selectTheme('cooking', this)">
+        <div class="theme-title">Pretend Cooking</div>
+        <div class="theme-count">Pizzas & Cupcakes</div>
+      </div>
+      <div class="theme-box" onclick="selectTheme('nature', this)">
+        <div class="theme-title">Nature & Yard</div>
+        <div class="theme-count">Leaves, Twigs & Rafts</div>
+      </div>
+      <div class="theme-box" onclick="selectTheme('recycled', this)">
+        <div class="theme-title">Box Inventions</div>
+        <div class="theme-count">Mazes & Rockets</div>
+      </div>
     </div>
     <div style="display:flex; justify-content:space-between; margin-top:20px;">
-      <button class="btn btn-white" onclick="switchStep(1)">⬅️ Back</button>
-      <button class="btn btn-cyan" onclick="switchStep(3)">Check Supplies ➔</button>
+      <button class="btn btn-white" onclick="switchStep(1)">&lt; Back</button>
+      <button class="btn btn-cyan" onclick="switchStep(3)">Check Supplies &gt;</button>
     </div>
   </section>
 
   <!-- STEP 3: SUPPLIES -->
   <section id="step-3" class="card" style="display:none;">
-    <div class="supply-header-bar">
+    <div class="card-tape">Toy Box & Craft Closet</div>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
       <div>
         <h2 class="card-title">What Materials Do You Have?</h2>
         <p class="card-desc" style="margin-bottom:0;">Check off what is in the house. Your closet is automatically saved!</p>
       </div>
       <div class="match-pill ready" id="badge-counter-text">0 Ready</div>
     </div>
-    <div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
-      <button class="btn btn-yellow" onclick="quickCheckStandard()">⭐️ Quick Check Basics</button>
+    <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
+      <button class="btn btn-yellow" onclick="quickCheckStandard()">Quick Check Basics</button>
       <button class="btn btn-white" onclick="clearAllSupplies()">Clear All</button>
     </div>
     <div id="supply-groups-container"></div>
     <div class="add-material-box">
-      <div style="font-weight:900; font-size:0.95rem; margin-bottom:6px;">➕ Found something new in your bin? Add it here!</div>
-      <p style="font-size:0.82rem; font-weight:700; color:#854d0e; margin-bottom:8px;">
+      <div style="font-weight:900; font-size:0.98rem; margin-bottom:6px;">+ Found something new in your bin? Add it here!</div>
+      <p style="font-size:0.85rem; font-weight:800; color:#854d0e; margin-bottom:8px;">
         Type any material (e.g. "Popsicle Sticks", "Felt Sheets"). It adds directly to your closet and recalibrates the database!
       </p>
       <div style="display:flex; gap:8px;">
@@ -208,165 +255,117 @@
       </div>
     </div>
     <div style="display:flex; justify-content:space-between; margin-top:20px;">
-      <button class="btn btn-white" onclick="switchStep(2)">⬅️ Back</button>
-      <button class="btn btn-green" onclick="switchStep(4)">Find Crafts ➔</button>
+      <button class="btn btn-white" onclick="switchStep(2)">&lt; Back</button>
+      <button class="btn btn-green" onclick="switchStep(4)">Find Crafts &gt;</button>
     </div>
   </section>
 
-  <!-- STEP 4: CRAFTS -->
+  <!-- STEP 4: CRAFTS RESULTS -->
   <section id="step-4" class="card" style="display:none;">
+    <div class="card-tape">Playroom Project List</div>
     <h2 class="card-title">Matched Craft Projects</h2>
     <p class="card-desc" id="results-headline">Searching craft database...</p>
     <div id="crafts-results-container"></div>
-    <div style="margin-top:16px; border-top:3px solid var(--c-border); padding-top:14px;">
-      <button class="btn btn-white" onclick="switchStep(3)">⬅️ Edit Supplies</button>
+    <div style="margin-top:16px; border-top:3.5px solid var(--c-border); padding-top:14px;">
+      <button class="btn btn-white" onclick="switchStep(3)">&lt; Edit Supplies</button>
     </div>
   </section>
 </div>
 
 <div class="footer-bar">
-  <div style="font-size:0.88rem; font-weight:900;" id="footer-status-text">Helpers: 2 Kids (Ages 8 & 3)</div>
+  <div class="footer-status" id="footer-status-text">Helpers: 2 Kids (Ages 8 & 3)</div>
   <button class="btn btn-yellow" onclick="switchStep(4)">View Matches (<span id="footer-badge-count">0</span>)</button>
 </div>
 
 <script>
-const ICONS = {
-  box: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
-  roll: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/></svg>`,
-  scissors: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/></svg>`,
-  glue: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5"><path d="M10 2h4v3h-4z"/><path d="M7 8l2-3h6l2 3v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8z"/></svg>`,
-  pom: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg>`,
-  markers: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5"><path d="m14 4 6 6-12 12H2v-6L14 4z"/></svg>`,
-  spark: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg>`
+const SVG_ICONS = {
+  box: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+  roll: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/></svg>`,
+  scissors: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/></svg>`,
+  glue: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5"><path d="M10 2h4v3h-4z"/><path d="M7 8l2-3h6l2 3v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8z"/></svg>`,
+  tape: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>`,
+  pom: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg>`,
+  pen: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5"><path d="m14 4 6 6-12 12H2v-6L14 4z"/></svg>`,
+  sparkle: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg>`
 };
 
 let SUPPLY_CATEGORIES = [
-  { category: "Recycled Cardboard & Tubes", items: [
-    { id: "cardboard", name: "Cardboard Boxes or Sheets", icon: ICONS.box },
-    { id: "tubes", name: "Cardboard Rolls (TP / Towel)", icon: ICONS.roll },
-    { id: "egg_carton", name: "Egg Cartons", icon: ICONS.box },
-    { id: "plastic_bottle", name: "Plastic Bottles or Tubs", icon: ICONS.box },
-    { id: "paper_plate", name: "Paper Plates or Cups", icon: ICONS.box }
+  { category: "Cardboard & Bases", items: [
+    { id: "cardboard", name: "Cardboard Boxes or Sheets", icon: SVG_ICONS.box },
+    { id: "tubes", name: "Cardboard Rolls (TP / Towel)", icon: SVG_ICONS.roll },
+    { id: "egg_carton", name: "Egg Cartons", icon: SVG_ICONS.box },
+    { id: "plastic_bottle", name: "Plastic Bottles or Tubs", icon: SVG_ICONS.box },
+    { id: "paper_plate", name: "Paper Plates or Cups", icon: SVG_ICONS.box }
   ]},
-  { category: "Fasteners & Cutters", items: [
-    { id: "scissors", name: "Scissors", icon: ICONS.scissors },
-    { id: "glue", name: "School Glue or Glue Stick", icon: ICONS.glue },
-    { id: "tape", name: "Tape (Masking or Clear)", icon: ICONS.spark }
+  { category: "Tools & Fasteners", items: [
+    { id: "scissors", name: "Scissors", icon: SVG_ICONS.scissors },
+    { id: "glue", name: "School Glue or Glue Stick", icon: SVG_ICONS.glue },
+    { id: "tape", name: "Tape (Masking, Clear, or Duct)", icon: SVG_ICONS.tape }
   ]},
-  { category: "Classic Craft Bins", items: [
-    { id: "puff_balls", name: "Puff Balls / Pom-Poms", icon: ICONS.pom },
-    { id: "pipe_cleaners", name: "Pipe Cleaners", icon: ICONS.spark },
-    { id: "googly_eyes", name: "Googly Eyes", icon: ICONS.spark },
-    { id: "construction_paper", name: "Colored Paper", icon: ICONS.spark },
-    { id: "yarn", name: "Yarn or String", icon: ICONS.spark }
+  { category: "Craft Bin Materials", items: [
+    { id: "puff_balls", name: "Puff Balls / Pom-Poms", icon: SVG_ICONS.pom },
+    { id: "pipe_cleaners", name: "Pipe Cleaners", icon: SVG_ICONS.sparkle },
+    { id: "googly_eyes", name: "Googly Eyes", icon: SVG_ICONS.sparkle },
+    { id: "construction_paper", name: "Colored Paper", icon: SVG_ICONS.sparkle },
+    { id: "yarn", name: "Yarn or String", icon: SVG_ICONS.sparkle }
   ]},
-  { category: "Colors & Nature", items: [
-    { id: "markers", name: "Washable Markers / Crayons", icon: ICONS.markers },
-    { id: "paint", name: "Washable Paint", icon: ICONS.spark },
-    { id: "foil", name: "Aluminum Foil", icon: ICONS.spark },
-    { id: "cotton_balls", name: "Cotton Balls", icon: ICONS.pom },
-    { id: "leaves", name: "Fallen Yard Leaves", icon: ICONS.spark },
-    { id: "twigs", name: "Twigs & Sticks", icon: ICONS.spark }
+  { category: "Colors & Nature Finds", items: [
+    { id: "markers", name: "Washable Markers / Crayons", icon: SVG_ICONS.pen },
+    { id: "paint", name: "Washable Paint", icon: SVG_ICONS.sparkle },
+    { id: "foil", name: "Aluminum Foil", icon: SVG_ICONS.sparkle },
+    { id: "cotton_balls", name: "Cotton Balls", icon: SVG_ICONS.pom },
+    { id: "leaves", name: "Fallen Yard Leaves", icon: SVG_ICONS.sparkle },
+    { id: "twigs", name: "Twigs & Sticks", icon: SVG_ICONS.sparkle }
   ]}
 ];
 
 let CRAFT_PROJECTS = [
-  {
-    id: "rugrats-reptar-mask",
-    title: "Box-Head Reptar Dinosaur Mask",
-    theme: "rugrats", min_age: 3, max_age: 12, prep_time: "15 mins", mess_level: "Med",
-    required_supplies: ["cardboard", "scissors", "glue", "markers"],
-    substitutes: { cardboard: "Cereal box or paper bag" },
-    description: "Roar like Reptar! Transform a cardboard box into a dinosaur helmet with sharp egg carton or paper teeth.",
-    role_younger: "Color green dinosaur scales with markers and glue on the paper teeth.",
-    role_older: "Safely cut eyeholes in the box, measure head fit, and cut serrated back spikes.",
-    steps: ["Cut out large viewing eyeholes in a small box.", "Color or paint the box bright green.", "Cut white triangle teeth and glue inside the mouth opening.", "Add cardboard back spikes and roar!"]
-  },
-  {
-    id: "blues-notebook",
-    title: "Handy Dandy Notebook & Crayon",
-    theme: "blues_clues", min_age: 3, max_age: 9, prep_time: "10 mins", mess_level: "Low",
-    required_supplies: ["cardboard", "construction_paper", "yarn", "scissors"],
-    substitutes: { yarn: "Pipe cleaner or tape binding", cardboard: "Cereal box back" },
-    description: "Make your own iconic detective notebook to draw clues and solve puzzles like Steve and Blue!",
-    role_younger: "Draw the front green thinking chair and scribble clue drawings inside.",
-    role_older: "Cut paper pages to size, punch binding holes, and spiral yarn through the binding.",
-    steps: ["Cut sturdy cardboard for front and back covers.", "Cut 5-6 sheets of paper to match.", "Punch holes along the edge and bind with green yarn.", "Draw a thinking chair on the cover!"]
-  },
-  {
-    id: "bluey-featherwand",
-    title: "Heavy! Magic Featherwand",
-    theme: "bluey", min_age: 3, max_age: 10, prep_time: "8 mins", mess_level: "Low",
-    required_supplies: ["twigs", "construction_paper", "scissors", "tape"],
-    substitutes: { twigs: "Cardboard tube or wooden spoon" },
-    description: "Inspired by Bingo's featherwand! Tap household items with the wand and yell 'HEAVY!' to freeze family members.",
-    role_younger: "Cut fringe slits in the paper feather and tap toys with the magic wand.",
-    role_older: "Shape the feather quill, secure the tape binding to the twig, and invent wand spells.",
-    steps: ["Collect a sturdy 10-inch yard stick or twig.", "Cut an 8-inch feather silhouette from paper.", "Snip diagonal fringe along the edges.", "Tape securely to the tip of the twig."]
-  },
-  {
-    id: "halloween-mummy",
-    title: "Cardboard Tube Spooky Mummy",
-    theme: "holidays", min_age: 3, max_age: 9, prep_time: "10 mins", mess_level: "Low",
-    required_supplies: ["tubes", "tape", "glue"],
-    substitutes: { tape: "Torn strips of paper towel or toilet paper glued on" },
-    description: "Wrap an everyday cardboard roll in white masking tape or toilet paper strips for a cute Halloween mummy.",
-    role_younger: "Wrap tape or paper strips around the tube and stick on googly eyes.",
-    role_older: "Layer criss-crossing bandages for depth and use markers to add antique mummy shading.",
-    steps: ["Tear white tape or paper strips.", "Wrap around the tube at alternating angles.", "Leave a small slit for eyes.", "Glue eyes peeking out from the bandages!"]
-  },
-  {
-    id: "gabbys-cat-ears",
-    title: "Gabby's Magical Cat Ear Headband",
-    theme: "gabbys", min_age: 3, max_age: 10, prep_time: "10 mins", mess_level: "Low",
-    required_supplies: ["cardboard", "scissors", "glue", "pipe_cleaners", "puff_balls"],
-    substitutes: { pipe_cleaners: "Cardboard strip headband", puff_balls: "Wadded paper" },
-    description: "Wearable cat ears from Gabby's Dollhouse. Pinch the ears to start craft time!",
-    role_younger: "Pick puff ball colors, stick pom-poms onto glued ear triangles.",
-    role_older: "Measure headband size and cut symmetrical cardboard ear triangles.",
-    steps: ["Cut 1-inch cardboard strip sized to fit.", "Cut two cardboard ear triangles.", "Glue puff balls or pipe cleaners around rims.", "Attach ears to headband!"]
-  },
-  {
-    id: "cardboard-pizza",
-    title: "Wood-Fired Cardboard Pizza Parlor",
-    theme: "cooking", min_age: 3, max_age: 11, prep_time: "20 mins", mess_level: "Low",
-    required_supplies: ["cardboard", "scissors", "construction_paper", "glue"],
-    substitutes: { construction_paper: "Color white paper with markers" },
-    description: "Make a personal pizza with thick cardboard crust and colorful paper toppings.",
-    role_younger: "Sort toppings by color, glue toppings onto their own slice.",
-    role_older: "Trace and cut the circular crust, divide into equal slices.",
-    steps: ["Trace a plate onto cardboard and cut out a circle.", "Slice pizza into 4 or 6 triangles.", "Cut paper toppings: pepperoni, peppers, mushrooms.", "Glue toppings on and serve."]
-  },
-  {
-    id: "winter-snowman",
-    title: "Paper Plate Cotton-Ball Snowman",
-    theme: "holidays", min_age: 3, max_age: 8, prep_time: "10 mins", mess_level: "Low",
-    required_supplies: ["paper_plate", "cotton_balls", "glue", "markers"],
-    substitutes: { paper_plate: "Cardboard circles", cotton_balls: "Crumpled white tissue paper" },
-    description: "Fluffy 3D snowman portrait made from paper plates and soft cotton ball snow.",
-    role_younger: "Glue fluffy cotton balls all over the plate.",
-    role_older: "Cut out a paper carrot nose, top hat, and draw coal eyes and mouth.",
-    steps: ["Coat paper plate in glue.", "Press cotton balls firmly across surface.", "Add orange paper triangle nose.", "Draw or glue on top hat and button smile."]
-  }
+  {"id": "rugrats-reptar-mask", "title": "Box-Head Reptar Dinosaur Helmet", "theme": "rugrats", "theme_name": "Rugrats", "min_age": 3, "max_age": 12, "prep_time": "15 mins", "mess_level": "Med", "required_supplies": ["cardboard", "scissors", "glue", "markers"], "substitutes": {"cardboard": "Cereal box or sturdy paper bag"}, "description": "Roar like Reptar! Transform an everyday cardboard box into an iconic green dinosaur mask with serrated back spikes.", "role_younger": "Color green dinosaur scales with markers and glue sharp paper teeth inside the jaw.", "role_older": "Safely measure head fit, cut viewing eyeholes, and cut rigid cardboard back spikes.", "steps": ["Cut a large mouth viewing opening in the front of a small box.", "Color or paint the box bright Reptar green.", "Cut white paper triangle teeth and glue along the mouth opening.", "Cut 3 triangular spikes and glue them along the top.", "Put on the helmet and stomp like Reptar!"]},
+  {"id": "rugrats-reptar-wagon", "title": "Tommy's Cardboard Reptar Wagon", "theme": "rugrats", "theme_name": "Rugrats", "min_age": 3, "max_age": 11, "prep_time": "20 mins", "mess_level": "Low", "required_supplies": ["cardboard", "tubes", "yarn", "scissors", "tape"], "substitutes": {"yarn": "Shoelace, string, or taped paper strips", "tubes": "Plastic bottle caps or cardboard circles"}, "description": "Build Tommy, Chuckie, and Phil & Lil's favorite ride! Turn a shoebox into a rolling green dinosaur wagon to pull toys around the carpet.", "role_younger": "Draw dinosaur eyes and nostrils on the wagon front, load plush toys inside.", "role_older": "Poke axle holes through the box, slide tube axles through, and tie a sturdy pull-string.", "steps": ["Take a shoebox or shipping box as the wagon base.", "Cut four circular cardboard wheels and tape them to tube axles under the box.", "Wrap green construction paper around the front to look like Reptar's snout.", "Punch a hole in the front and tie a long yarn pull-string.", "Pack your toy babies inside and roll out on an adventure!"]},
+  {"id": "rugrats-chuckie-glasses", "title": "Chuckie Finster's Wild Purple Glasses", "theme": "rugrats", "theme_name": "Rugrats", "min_age": 3, "max_age": 9, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["cardboard", "scissors", "markers", "tape"], "substitutes": {"cardboard": "Cereal box flap or sturdy cardstock"}, "description": "Make Chuckie's iconic thick square purple glasses and rock his nervous toddler look!", "role_younger": "Color the frames solid purple and red, and practice funny Chuckie scared faces in the mirror.", "role_older": "Trace and cut two square lenses with a nose bridge, folding side temple arms to fit ears.", "steps": ["Trace two thick square frame borders onto cardboard.", "Cut out the center of each square so you can see through.", "Color the frames bright purple with markers.", "Cut two cardboard side arms and tape them to the corners so they sit on ears.", "Wear them proudly like Chuckie!"]},
+  {"id": "rugrats-cynthia-hair", "title": "Cynthia Doll's Wild Crazy Yarn Hair", "theme": "rugrats", "theme_name": "Rugrats", "min_age": 3, "max_age": 10, "prep_time": "12 mins", "mess_level": "Low", "required_supplies": ["tubes", "yarn", "scissors", "glue"], "substitutes": {"yarn": "Shredded paper, string, or cut pipe cleaners", "tubes": "Paper cup"}, "description": "Angelica's beloved Cynthia doll has the wildest hairstyle on television! Recreate Cynthia's three sticking-up tufts on a cardboard head.", "role_younger": "Stick googly eyes or draw Cynthia's cartoon lipstick smile on the tube face.", "role_older": "Snip yellow yarn into wild lengths and glue them upright in 3 wacky sprouting tufts.", "steps": ["Use a cardboard roll as Cynthia's head.", "Draw her dramatic makeup eyes and smirk with markers.", "Cut 6-8 strands of yellow yarn.", "Glue the yarn inside the top rim so they stick up in 3 wild crazy spikes.", "Set her up on your dresser!"]},
+  {"id": "blues-notebook", "title": "Handy Dandy Notebook & Crayon", "theme": "blues_clues", "theme_name": "Blue's Clues", "min_age": 3, "max_age": 9, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["cardboard", "construction_paper", "yarn", "scissors"], "substitutes": {"yarn": "Pipe cleaner or tape binding", "cardboard": "Cereal box back"}, "description": "Make Steve and Joe's iconic detective notebook! Draw clues and sit in the Thinking Chair to solve household riddles.", "role_younger": "Draw the green Thinking Chair on the cover and scribble clue drawings on inside pages.", "role_older": "Measure and cut cardboard covers, punch edge holes, and thread yarn through the spiral spine.", "steps": ["Cut two matching cardboard rectangles for the front and back covers.", "Cut 5-6 sheets of paper to fit inside.", "Punch holes along the left margin.", "Weave green yarn through the holes to create a spiral spine.", "Draw a red Thinking Chair on the cover and start hunting clues!"]},
+  {"id": "blues-mailbox", "title": "Here's the Mail! Singing Cardboard Mailbox", "theme": "blues_clues", "theme_name": "Blue's Clues", "min_age": 3, "max_age": 10, "prep_time": "15 mins", "mess_level": "Low", "required_supplies": ["cardboard", "scissors", "tape", "markers"], "substitutes": {"cardboard": "Empty tissue box or small shipping box"}, "description": "\"Mail time, mail time, mail time!\" Build your own friendly purple mailbox with an opening slot and a raiseable red flag.", "role_younger": "Color Mailbox's purple body, slide letters into the mail slot, and sing the mail song.", "role_older": "Cut the mail slot flap cleanly, engineer the rotating red cardboard flag with tape.", "steps": ["Use a small box or fold cardboard into a mailbox tunnel.", "Cut a hinged front door or top letter slot.", "Cut a red cardboard flag and attach it to the side with tape so it can swivel up and down.", "Write letters and postcards on scrap paper and deliver them!"]},
+  {"id": "blues-paw-stampers", "title": "Blue's Clues Clue-Finder Paw Prints", "theme": "blues_clues", "theme_name": "Blue's Clues", "min_age": 3, "max_age": 8, "prep_time": "8 mins", "mess_level": "Low", "required_supplies": ["construction_paper", "scissors", "tape", "markers"], "substitutes": {"construction_paper": "White paper colored bright blue with markers"}, "description": "Cut out bright blue puppy paw prints and tape them to objects around the house to create an interactive mystery scavenger hunt!", "role_younger": "Place paw prints on mysterious items around the room and shout \"A CLUE! A CLUE!\".", "role_older": "Trace paw prints with three round toes, cut out 3 matching clues, and write the detective riddle.", "steps": ["Trace handprints or paw shapes onto blue construction paper.", "Cut out 3 distinct paw prints.", "Tape the 3 paws onto 3 related household items (e.g., cup, spoon, cereal box).", "Hand your sibling their Handy Dandy Notebook to find all 3 clues!"]},
+  {"id": "bluey-featherwand", "title": "Bingo's Magic \"Heavy!\" Featherwand", "theme": "bluey", "theme_name": "Bluey", "min_age": 3, "max_age": 10, "prep_time": "8 mins", "mess_level": "Low", "required_supplies": ["twigs", "construction_paper", "scissors", "tape"], "substitutes": {"twigs": "Cardboard tube, wooden spoon, or rolled paper"}, "description": "Freeze! Inspired by Bingo's favorite game in Bluey. Tap household furniture or parents and yell \"HEAVY!\" to make them unable to move.", "role_younger": "Cut fringe slits along the paper feather edges and tap toys with the magic wand.", "role_older": "Shape the quill silhouette, lash the tape firmly to the twig, and make up wacky spells.", "steps": ["Find a straight 10-inch yard stick or twig.", "Cut an 8-inch feather shape from paper.", "Snip diagonal fringe cuts along both edges.", "Tape the feather securely to the top of the stick.", "Wave the featherwand and make things heavy!"]},
+  {"id": "bluey-chattermax", "title": "Chattermax Screeching Pom-Pom Bird", "theme": "bluey", "theme_name": "Bluey", "min_age": 3, "max_age": 9, "prep_time": "12 mins", "mess_level": "Low", "required_supplies": ["egg_carton", "puff_balls", "glue", "scissors"], "substitutes": {"egg_carton": "Cardboard tube", "puff_balls": "Tissue paper balls"}, "description": "Bluey and Bingo's chaotic, noisy neon pet bird! Make a colorful Chattermax with huge eyes and crazy neon plumage.", "role_younger": "Glue neon puff balls all over the egg carton body and press on big googly eyes.", "role_older": "Trim the egg carton cup neatly, cut a triangle paper beak, and make Chattermax dance.", "steps": ["Cut one egg carton cup for the round bird body.", "Cover with glue and pile on bright pink, green, and blue puff balls.", "Add two large googly eyes to the front.", "Glue an orange paper beak between the eyes.", "Make silly bird sounds and dance around!"]},
+  {"id": "bluey-bob-bilby", "title": "Bob Bilby Cardboard Pocket Puppet", "theme": "bluey", "theme_name": "Bluey", "min_age": 3, "max_age": 10, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["cardboard", "construction_paper", "scissors", "glue"], "substitutes": {"cardboard": "Brown paper bag or clean sock"}, "description": "Kindergarten's traveling puppet friend! Make your own Bob Bilby with long bilby ears to document your family's daily activities.", "role_younger": "Stick pink inner-ear papers onto the bilby ears and color his fuzzy nose.", "role_older": "Cut the curved bilby body and tall pointy ears, glue the finger pouch on the back.", "steps": ["Draw a pear-shaped bilby body on cardboard.", "Cut out two long bunny-like bilby ears and glue to the top.", "Add a little pink paper triangle nose and marker whiskers.", "Tape a paper strap on the back to make a finger puppet.", "Take Bob Bilby on a household tour!"]},
+  {"id": "gabbys-cat-ears", "title": "Gabby's Magical Cat Ear Headband", "theme": "gabbys", "theme_name": "Gabby's Dollhouse", "min_age": 3, "max_age": 10, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["cardboard", "scissors", "glue", "pipe_cleaners", "puff_balls"], "substitutes": {"pipe_cleaners": "Sturdy cardboard strip headband", "puff_balls": "Tissue paper tufts"}, "description": "Pinch the ears to shrink into craft time! Make Gabby's signature wearable cat ears with sparkly trim.", "role_younger": "Pick puff ball colors, stick pom-poms onto glued ear triangles.", "role_older": "Measure headband sizing and cut symmetrical cardboard ear triangles.", "steps": ["Cut a 1-inch cardboard strip sized to fit the head.", "Cut two cardboard ear triangles.", "Glue puff balls or twist pipe cleaners around the outer rims.", "Attach the ears to the headband band.", "Put on and pinch the ears for magic!"]},
+  {"id": "gabbys-baby-box-robot", "title": "Baby Box's Cardboard Robo-Buddy", "theme": "gabbys", "theme_name": "Gabby's Dollhouse", "min_age": 3, "max_age": 12, "prep_time": "15 mins", "mess_level": "Med", "required_supplies": ["cardboard", "tubes", "glue", "scissors"], "substitutes": {"cardboard": "Cereal box or cracker box"}, "description": "Straight from the Craft Room with Baby Box! Turn everyday small boxes into a springy, friendly robot.", "role_younger": "Stick puff-ball buttons onto the belly, draw dials and power meters.", "role_older": "Cut tubes evenly for legs, wrap foil corners smoothly, poke arm holes.", "steps": ["Wrap or color a small cardboard box for the torso.", "Cut a cardboard tube in half for legs; glue underneath.", "Poke side holes and insert pipe cleaners or cardboard arms.", "Glue pom-poms on the chest as power buttons."]},
+  {"id": "gabbys-mercat-potion", "title": "MerCat's Sparkling Spa Potion", "theme": "gabbys", "theme_name": "Gabby's Dollhouse", "min_age": 3, "max_age": 10, "prep_time": "10 mins", "mess_level": "Med", "required_supplies": ["plastic_bottle", "paint", "foil"], "substitutes": {"foil": "Shiny snipped paper scraps or tiny pom-poms"}, "description": "\"Spa-tacular!\" Mix an oceanic sensory calming bottle with swirling turquoise liquid and floating mermaid foil scales.", "role_younger": "Drop foil sparkles and pom-poms into the bottle, do the swirl testing.", "role_older": "Measure water, count color drops, and securely tape the cap shut.", "steps": ["Fill a clear plastic bottle 3/4 with water.", "Add a drop of washable paint or food coloring.", "Drop in snipped shiny foil or sequins.", "Tighten and tape the cap shut for leak-proof play.", "Shake and watch the calming mermaid swirl."]},
+  {"id": "gabbys-cakey-cupcakes", "title": "Cakey Cat's Sweet Pretend Cupcakes", "theme": "gabbys", "theme_name": "Gabby's Dollhouse", "min_age": 3, "max_age": 9, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["egg_carton", "puff_balls", "glue", "scissors"], "substitutes": {"egg_carton": "Paper cups or sliced toilet roll rings"}, "description": "Bake pretend sweet treats just like Cakey Cat in his kitchen! Perfect for imaginary bakery play.", "role_younger": "Stuff pom-pom frosting into cups, choose bakery flavors, serve on paper plates.", "role_older": "Trim individual egg carton cups with scissors, bend pipe cleaner cherries.", "steps": ["Cut egg carton cups apart into individual liners.", "Color liners with markers.", "Glue puff balls inside as mounds of frosting.", "Top with a pipe cleaner cherry and serve!"]},
+  {"id": "gabbys-dj-catnip-shakers", "title": "DJ Catnip's Groovy Beat Shakers", "theme": "gabbys", "theme_name": "Gabby's Dollhouse", "min_age": 3, "max_age": 9, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["tubes", "tape", "scissors"], "substitutes": {"tubes": "Plastic bottle or small cardboard box"}, "description": "Feel the beat! Fold and tape cardboard rolls into cool 3D triangular prism maracas and start a dance party.", "role_younger": "Scoop dry pasta, rice, or backyard pebbles inside, decorate the wrapper.", "role_older": "Fold the 3D prism corners and ensure all tape seams are completely leak-proof.", "steps": ["Tape one end of a tube pinched flat.", "Drop in 2 spoons of dry pasta, rice, or pebbles.", "Pinch the other end flat in the opposite direction (making a 3D triangle) and tape tight.", "Shake to the rhythm!"]},
+  {"id": "holiday-halloween-mummy", "title": "Cardboard Roll Spooky Mummy", "theme": "holidays", "theme_name": "Holidays & Seasonal", "min_age": 3, "max_age": 9, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["tubes", "tape", "glue"], "substitutes": {"tape": "Torn strips of paper towel or toilet paper glued on"}, "description": "Wrap an everyday cardboard roll in white masking tape or toilet paper bandages for a friendly Halloween mummy.", "role_younger": "Wrap tape or paper strips around the tube and stick on googly eyes.", "role_older": "Layer criss-crossing bandages for realistic mummy texture and add dark marker eye-slits.", "steps": ["Tear white tape or paper strips.", "Wrap around the tube at alternating angles.", "Leave a small slit for eyes.", "Glue eyes peeking out from the bandages!"]},
+  {"id": "holiday-halloween-bats", "title": "Egg Carton Flying Vampire Bats", "theme": "holidays", "theme_name": "Holidays & Seasonal", "min_age": 3, "max_age": 10, "prep_time": "12 mins", "mess_level": "Med", "required_supplies": ["egg_carton", "scissors", "markers", "yarn"], "substitutes": {"yarn": "Tape or string", "markers": "Black paint"}, "description": "Cut a 3-cup section of an egg carton into a flying bat with arched wings. Hang them from doorframes!", "role_younger": "Color or paint the egg carton bat jet-black and stick on red marker fangs.", "role_older": "Cut the curved scalloped wing edges and punch a hole to tie a hanging string.", "steps": ["Cut a row of 3 egg cups from an egg carton.", "Cut scalloped semi-circles out of the two outer cups to form bat wings.", "Color or paint the entire bat black.", "Draw two white triangle fangs on the center cup face.", "Tie yarn to the top and hang from the ceiling!"]},
+  {"id": "holiday-thanksgiving-turkey", "title": "Fall Leaf Pinecone Wild Turkey", "theme": "holidays", "theme_name": "Holidays & Seasonal", "min_age": 3, "max_age": 11, "prep_time": "12 mins", "mess_level": "Low", "required_supplies": ["leaves", "glue", "construction_paper", "scissors"], "substitutes": {"leaves": "Torn colorful paper or handprint cutouts"}, "description": "Gather outdoor autumn leaves and fan them out into a giant colorful turkey tail for Thanksgiving dinner tables.", "role_younger": "Collect fallen leaves outside and glue them into a big fanned-out tail fan.", "role_older": "Cut the turkey body silhouette, orange triangle beak, and red paper snood.", "steps": ["Collect 5-7 colorful red, yellow, and orange leaves outside.", "Glue leaves in a fan shape onto a cardboard base.", "Cut a brown paper peanut-shape for the turkey body.", "Glue the body over the leaf stems.", "Add an orange beak and red paper snood!"]},
+  {"id": "holiday-thanksgiving-tree", "title": "Family Thankful Tree & Leaves", "theme": "holidays", "theme_name": "Holidays & Seasonal", "min_age": 3, "max_age": 12, "prep_time": "15 mins", "mess_level": "Low", "required_supplies": ["cardboard", "construction_paper", "scissors", "glue"], "substitutes": {"construction_paper": "White paper colored with crayons"}, "description": "Trace your arm for the tree trunk, cut paper leaves, and write what each family member is thankful for!", "role_younger": "Press colorful paper leaves onto tree branches and share favorite family toys/people.", "role_older": "Trace forearm onto cardboard for the tree trunk and write gratitude notes on each leaf.", "steps": ["Trace a child's forearm and splayed hand onto cardboard to form the trunk and branches.", "Cut out colorful paper leaf ovals.", "Ask each family member to write or dictate one thankful thought per leaf.", "Glue leaves onto branches!"]},
+  {"id": "holiday-winter-snowman", "title": "Paper Plate Cotton-Ball Snowman", "theme": "holidays", "theme_name": "Holidays & Seasonal", "min_age": 3, "max_age": 8, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["paper_plate", "cotton_balls", "glue", "markers"], "substitutes": {"paper_plate": "Cardboard circles", "cotton_balls": "Crumpled white paper or tissue"}, "description": "Fluffy 3D winter snowman portrait made from paper plates and soft cotton ball snow.", "role_younger": "Spread glue and pack soft cotton balls all over the paper plate.", "role_older": "Cut out a paper top hat, orange carrot nose, and draw button coal eyes.", "steps": ["Coat paper plate with school glue.", "Press cotton balls firmly across the surface.", "Add an orange paper triangle carrot nose.", "Glue on a black paper top hat and draw a warm smile!"]},
+  {"id": "holiday-winter-reindeer", "title": "Cardboard Tube Rudolph Reindeer", "theme": "holidays", "theme_name": "Holidays & Seasonal", "min_age": 3, "max_age": 10, "prep_time": "12 mins", "mess_level": "Low", "required_supplies": ["tubes", "twigs", "glue", "scissors"], "substitutes": {"twigs": "Cut paper antlers or twisted pipe cleaners"}, "description": "Turn a cardboard tube into Santa's lead reindeer using yard twigs as realistic antlers and a red pom-pom nose.", "role_younger": "Glue on Rudolph's giant red pom-pom nose and stick on eyes.", "role_older": "Poke top holes safely with a pencil and wedge branched twig antlers into place.", "steps": ["Color cardboard roll brown with markers or crayons.", "Find two small branched twigs outside for antlers.", "Poke two small holes at the top and insert twig antlers.", "Glue a bright red puff ball on front as the glowing nose!"]},
+  {"id": "holiday-spring-bunny", "title": "Springtime Cotton-Tail Bunny Ears", "theme": "holidays", "theme_name": "Holidays & Seasonal", "min_age": 3, "max_age": 9, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["cardboard", "cotton_balls", "scissors", "glue"], "substitutes": {"cotton_balls": "White paper shreds or pom-poms"}, "description": "Hop into spring! Craft a wearable bunny ears headband covered in fluffy cotton clouds.", "role_younger": "Pull apart cotton balls to make them extra fluffy and stick along the ears.", "role_older": "Cut symmetrical tall ear shapes from cardboard and size the headband ring.", "steps": ["Cut a cardboard strip sized to fit the child's head.", "Cut two tall bunny ears from cardboard.", "Glue fluffy cotton balls over the ears.", "Affix ears to the headband and hop around!"]},
+  {"id": "cardboard-pizza", "title": "Wood-Fired Cardboard Pizza Parlor", "theme": "cooking", "theme_name": "Pretend Cooking", "min_age": 3, "max_age": 11, "prep_time": "20 mins", "mess_level": "Low", "required_supplies": ["cardboard", "scissors", "construction_paper", "glue"], "substitutes": {"construction_paper": "White paper colored with markers or grocery flyers"}, "description": "Slice and serve! Make a custom personal pizza with thick cardboard crust and an array of paper toppings for kitchen orders.", "role_younger": "Sort toppings by color, glue toppings onto their own slice, take customer orders.", "role_older": "Trace and cut the circular crust, divide into equal slices, and construct an oven box.", "steps": ["Trace a plate onto cardboard and cut out a circle.", "Slice pizza into 4 or 6 triangles.", "Cut paper toppings: pepperoni, peppers, mushrooms.", "Glue toppings on and serve."]},
+  {"id": "ice-cream-cones", "title": "Stackable Pom-Pom Ice Cream Cones", "theme": "cooking", "theme_name": "Pretend Cooking", "min_age": 3, "max_age": 8, "prep_time": "10 mins", "mess_level": "Low", "required_supplies": ["cardboard", "puff_balls", "scissors", "tape"], "substitutes": {"cardboard": "Brown paper bag or construction paper", "puff_balls": "Crinkled tissue balls"}, "description": "Roll up waffle cones and scoop up giant multi-flavor ice cream sundaes! Great for imaginative play.", "role_younger": "Pick ice cream flavors, stack pom-poms into the cone, count scoops.", "role_older": "Measure and roll the cone geometry, tape the structural edge, draw waffle grids.", "steps": ["Cut a quarter-circle from paper or cardboard.", "Roll into a cone shape and tape the seam.", "Draw criss-cross waffle cone lines with a brown marker.", "Stack giant puff balls inside as ice cream scoops!"]},
+  {"id": "cardboard-maze", "title": "Gravity-Drop Cardboard Marble Maze", "theme": "recycled", "theme_name": "Box Inventions", "min_age": 4, "max_age": 12, "prep_time": "20 mins", "mess_level": "Low", "required_supplies": ["cardboard", "tubes", "scissors", "glue"], "substitutes": {"tubes": "Folded cardboard strips as track walls"}, "description": "Architect an interactive handheld maze! Guide a ball or pom-pom through cardboard ramps, tunnels, and obstacle gates.", "role_younger": "Roll pom-poms through ramps to test slopes, draw obstacle traps.", "role_older": "Engineer ramp angles so balls roll freely, cut tunnel arches, align track gates.", "steps": ["Use a shoebox lid or cardboard sheet as the maze board.", "Cut tubes in half lengthwise for ramps.", "Glue ramps at alternating slopes down the board.", "Tilt board to steer a ball from start to finish!"]},
+  {"id": "nature-leaf-lantern", "title": "Nature Explorer Leaf Lantern", "theme": "nature", "theme_name": "Nature & Yard", "min_age": 3, "max_age": 12, "prep_time": "15 mins", "mess_level": "Med", "required_supplies": ["leaves", "glue", "plastic_bottle"], "substitutes": {"plastic_bottle": "Clear plastic cup or takeout container"}, "description": "Collect autumn yard leaves and decoupage them onto a glowing lantern jar. Drop a flashlight inside!", "role_younger": "Hunt for colorful fallen leaves in the yard, paint broad glue strokes.", "role_older": "Cut bottle top opening smoothly, arrange overlapping botanical mosaic patterns.", "steps": ["Collect flat, flexible leaves outside.", "Cut top off a clear plastic bottle.", "Brush glue around the bottle exterior.", "Press leaves onto glue, seal with a second coat.", "Place a flashlight inside!"]},
+  {"id": "nature-twig-raft", "title": "Buoyant Twig Raft & Leaf Sail", "theme": "nature", "theme_name": "Nature & Yard", "min_age": 3, "max_age": 12, "prep_time": "15 mins", "mess_level": "Low", "required_supplies": ["twigs", "yarn", "scissors", "leaves"], "substitutes": {"yarn": "Rubber bands, tape, or dental floss"}, "description": "An outdoor STEM craft: lash twigs together to create a buoyant raft with a wind-catching leaf sail.", "role_younger": "Find sticks and broad leaves outside, blow on sail to navigate.", "role_older": "Trim twigs to matching lengths, knot and cross-lash twigs with yarn.", "steps": ["Collect 8-10 straight twigs of equal length.", "Line up twigs and lash ends securely with yarn.", "Wedge an upright twig in the center as the mast.", "Pierce a large leaf onto the mast as a sail.", "Float in the sink or a puddle!"]}
 ];
 
 let appState = {
   kids: [8, 3],
   selectedTheme: 'all',
-  supplies: new Set(['cardboard', 'tubes', 'scissors', 'glue', 'tape', 'puff_balls', 'pipe_cleaners', 'markers'])
+  supplies: new Set(['cardboard', 'tubes', 'scissors', 'glue', 'tape', 'puff_balls', 'pipe_cleaners', 'markers', 'construction_paper'])
 };
 
 function loadSaved() {
   try {
-    const s = localStorage.getItem('cc9k_supplies');
+    const s = localStorage.getItem('cc9k_supplies_v4');
     if (s) appState.supplies = new Set(JSON.parse(s));
-    const k = localStorage.getItem('cc9k_kids');
+    const k = localStorage.getItem('cc9k_kids_v4');
     if (k) appState.kids = JSON.parse(k);
-    const c = localStorage.getItem('cc9k_custom_supplies');
+    const c = localStorage.getItem('cc9k_custom_supplies_v4');
     if (c) {
       JSON.parse(c).forEach(item => {
         if (!SUPPLY_CATEGORIES[2].items.some(x => x.id === item.id)) {
-          item.icon = ICONS.spark;
+          item.icon = SVG_ICONS.sparkle;
           SUPPLY_CATEGORIES[2].items.push(item);
         }
       });
@@ -376,8 +375,8 @@ function loadSaved() {
 
 function saveState() {
   try {
-    localStorage.setItem('cc9k_supplies', JSON.stringify(Array.from(appState.supplies)));
-    localStorage.setItem('cc9k_kids', JSON.stringify(appState.kids));
+    localStorage.setItem('cc9k_supplies_v4', JSON.stringify(Array.from(appState.supplies)));
+    localStorage.setItem('cc9k_kids_v4', JSON.stringify(appState.kids));
   } catch(e) {}
 }
 
@@ -403,8 +402,8 @@ function renderKids() {
         <div class="age-val">${age} yrs</div>
         <button class="btn-stepper" onclick="changeAge(${idx}, 1)">+</button>
       </div>
-      <span style="font-size:0.85rem; font-weight:800; color:#64748b;">(${age <= 3 ? 'Little Sibling / Preschool' : 'Big Kid / Assistant'})</span>
-      ${appState.kids.length > 1 ? `<button style="margin-left:auto; background:none; border:none; cursor:pointer;" onclick="removeKid(${idx})">❌</button>` : ''}
+      <span style="font-size:0.85rem; font-weight:800; color:#64748b;">(${age <= 3 ? 'Little Sibling / Toddler' : 'Big Kid / Builder'})</span>
+      ${appState.kids.length > 1 ? `<button style="margin-left:auto; background:none; border:none; font-weight:900; font-size:1.1rem; cursor:pointer;" onclick="removeKid(${idx})">X</button>` : ''}
     `;
     c.appendChild(r);
   });
@@ -432,8 +431,8 @@ function renderSupplies() {
   c.innerHTML = '';
   SUPPLY_CATEGORIES.forEach(grp => {
     const gDiv = document.createElement('div');
-    gDiv.style.marginBottom = "16px";
-    gDiv.innerHTML = `<div style="font-size:1rem; font-weight:900; margin-bottom:8px;">${grp.category}</div>`;
+    gDiv.className = 'supply-group';
+    gDiv.innerHTML = `<div class="supply-group-title">${grp.category}</div>`;
     const grid = document.createElement('div');
     grid.className = 'supply-grid';
     grp.items.forEach(i => {
@@ -443,7 +442,7 @@ function renderSupplies() {
       it.innerHTML = `
         <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleSupply('${i.id}', this.checked)">
         <span>${i.icon}</span>
-        <span style="font-weight:800; font-size:0.85rem;">${i.name}</span>
+        <span class="supply-name">${i.name}</span>
       `;
       grid.appendChild(it);
     });
@@ -460,7 +459,7 @@ function toggleSupply(id, checked) {
 }
 
 function quickCheckStandard() {
-  ['cardboard', 'tubes', 'scissors', 'glue', 'tape', 'puff_balls', 'pipe_cleaners', 'markers'].forEach(i => appState.supplies.add(i));
+  ['cardboard', 'tubes', 'scissors', 'glue', 'tape', 'puff_balls', 'pipe_cleaners', 'markers', 'construction_paper'].forEach(i => appState.supplies.add(i));
   renderSupplies();
   saveState();
 }
@@ -482,15 +481,15 @@ function addNewCustomSupply() {
   const val = inp.value.trim();
   if (!val) return;
   const id = val.toLowerCase().replace(/[^a-z0-9]/g, '_');
-  const newItem = { id: id, name: val, icon: ICONS.spark };
+  const newItem = { id: id, name: val, icon: SVG_ICONS.sparkle };
 
   SUPPLY_CATEGORIES[2].items.push(newItem);
   appState.supplies.add(id);
 
   try {
-    const existing = JSON.parse(localStorage.getItem('cc9k_custom_supplies') || '[]');
+    const existing = JSON.parse(localStorage.getItem('cc9k_custom_supplies_v4') || '[]');
     existing.push({ id: id, name: val });
-    localStorage.setItem('cc9k_custom_supplies', JSON.stringify(existing));
+    localStorage.setItem('cc9k_custom_supplies_v4', JSON.stringify(existing));
   } catch(e) {}
 
   inp.value = '';
@@ -513,47 +512,49 @@ function renderCraftResults() {
 
     const tokens = p.required_supplies.map(s => {
       const have = appState.supplies.has(s);
-      return `<span class="token ${have ? 'have' : 'missing'}">${have ? '✓' : '✗'} ${s.replace('_', ' ')}</span>`;
+      return `<span class="token ${have ? 'have' : 'missing'}">${have ? '[OK]' : '[MISSING]'} ${formatName(s)}</span>`;
     }).join(' ');
 
     let subHtml = '';
     if (missing.length > 0 && p.substitutes) {
-      const subNotes = missing.map(m => p.substitutes[m] ? `Missing ${m.replace('_', ' ')}? Try: ${p.substitutes[m]}` : null).filter(Boolean);
-      if (subNotes.length) subHtml = `<div class="substitute-box">💡 Daycare Substitute Trick:<br>${subNotes.join('<br>')}</div>`;
+      const subNotes = missing.map(m => p.substitutes[m] ? `Missing ${formatName(m)}? Try: ${p.substitutes[m]}` : null).filter(Boolean);
+      if (subNotes.length) subHtml = `<div class="substitute-box">Substitute Trick:<br>${subNotes.join('<br>')}</div>`;
     }
 
     const minKid = Math.min(...appState.kids);
     const maxKid = Math.max(...appState.kids);
     const rolesHtml = appState.kids.length >= 2 
       ? `<div class="teamwork-card">
-           <div style="font-size:0.85rem; font-weight:900; color:#0369a1; margin-bottom:4px;">🤝 Teamwork Roles (${maxKid} yrs & ${minKid} yrs)</div>
-           <div style="font-size:0.82rem; font-weight:700; color:#1e3a8a;">👶 For ${minKid}-yr-old: ${p.role_younger}</div>
-           <div style="font-size:0.82rem; font-weight:700; color:#1e3a8a;">👧 For ${maxKid}-yr-old: ${p.role_older}</div>
+           <div class="teamwork-title">Teamwork Breakdown (${maxKid} yrs & ${minKid} yrs)</div>
+           <div class="team-role">For ${minKid}-yr-old: ${p.role_younger}</div>
+           <div class="team-role">For ${maxKid}-yr-old: ${p.role_older}</div>
          </div>`
       : `<div class="teamwork-card">
-           <div style="font-size:0.85rem; font-weight:900; color:#0369a1;">🎯 Child's Action Focus (${appState.kids[0]} yrs)</div>
-           <div style="font-size:0.82rem; font-weight:700; color:#1e3a8a;">${p.role_older}</div>
+           <div class="teamwork-title">Child's Focus (${appState.kids[0]} yrs)</div>
+           <div class="team-role">${p.role_older}</div>
          </div>`;
 
     const card = document.createElement('div');
     card.className = 'craft-card';
     card.innerHTML = `
       <div class="craft-top">
-        <div class="craft-heading-box">
-          <div class="preview-badge">${ICONS.spark}</div>
-          <div>
-            <h3 class="craft-heading">${p.title}</h3>
-            <span style="font-size:0.75rem; font-weight:800; color:#64748b;">#${p.theme.toUpperCase()}</span>
-          </div>
+        <div>
+          <h3 class="craft-heading">${p.title}</h3>
+          <span style="font-size:0.75rem; font-weight:900; color:#0284c7; text-transform:uppercase;">#${p.theme_name || p.theme}</span>
         </div>
-        <span class="match-pill ${isReady ? 'ready' : 'almost'}">${isReady ? '🎉 100% Ready' : `Missing ${missing.length}`}</span>
+        <span class="match-pill ${isReady ? 'ready' : 'almost'}">${isReady ? '100% Ready' : `Missing ${missing.length}`}</span>
       </div>
-      <p style="font-size:0.88rem; font-weight:700; color:#334155; margin:8px 0;">${p.description}</p>
+      <div class="craft-meta-tags">
+        <span class="meta-tag">Prep: ${p.prep_time}</span>
+        <span class="meta-tag">Mess: ${p.mess_level}</span>
+        <span class="meta-tag">Ages: ${p.min_age}-${p.max_age}</span>
+      </div>
+      <p style="font-size:0.9rem; font-weight:700; color:#334155; margin:8px 0;">${p.description}</p>
       ${rolesHtml}
-      <div style="margin: 8px 0;">${tokens}</div>
+      <div class="tokens-box">${tokens}</div>
       ${subHtml}
       <div style="margin-top:10px;">
-        <button class="btn btn-white" style="padding:4px 10px; font-size:0.8rem;" onclick="toggleSteps('step-${p.id}', this)">Show Steps ▼</button>
+        <button class="btn btn-white" style="padding:4px 10px; font-size:0.8rem;" onclick="toggleSteps('step-${p.id}', this)">Show Instructions v</button>
         <ol id="step-${p.id}" class="instructions-ol" style="display:none;">
           ${p.steps.map(s => `<li>${s}</li>`).join('')}
         </ol>
@@ -564,14 +565,22 @@ function renderCraftResults() {
 
   document.getElementById('tab-craft-count').textContent = readyCount;
   document.getElementById('footer-badge-count').textContent = readyCount;
-  document.getElementById('results-headline').textContent = `Found ${list.length} activities (${readyCount} ready now with your supplies).`;
+  document.getElementById('results-headline').textContent = `Showing ${list.length} activities (${readyCount} ready now with your supplies).`;
+}
+
+function formatName(id) {
+  for (const cat of SUPPLY_CATEGORIES) {
+    const found = cat.items.find(i => i.id === id);
+    if (found) return found.name.split(' (')[0];
+  }
+  return id.replace(/_/g, ' ');
 }
 
 function toggleSteps(id, btn) {
   const el = document.getElementById(id);
   const hidden = el.style.display === 'none';
   el.style.display = hidden ? 'block' : 'none';
-  btn.textContent = hidden ? 'Hide Steps ▲' : 'Show Steps ▼';
+  btn.textContent = hidden ? 'Hide Instructions ^' : 'Show Instructions v';
 }
 
 function updateStatus() {
